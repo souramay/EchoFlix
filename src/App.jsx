@@ -5,6 +5,7 @@ import appStore from "./utils/redux/appStore";
 import { onAuthStateChanged } from "firebase/auth";
 import { auth } from "./utils/firebase";
 import { addUser, removeUser } from "./utils/redux/AuthSlice";
+// udated git
 
 function App() {
   const [authChecked, setAuthChecked] = useState(false);
