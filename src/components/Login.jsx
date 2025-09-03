@@ -60,9 +60,9 @@ const Login = () => {
       <div className="">
         <img alt="logo" src={backgroundImg} className="absolute -z-10 w-full h-screen object-cover " />
       </div>
-      <div className="flex justify-center ">
+      <div className="flex justify-center  ">
        
-        <form className="text-white bg-black px-12 py-10 w-3/12 m-40 opacity-85 rounded-lg  " onSubmit={(e)=>{e.preventDefault()}}>
+        <form className="text-white bg-black px-12 py-10 w-full max-w-md mx-auto mt-38 opacity-85 rounded-lg" onSubmit={(e)=>{e.preventDefault()}}>
 
           <h1 className="text-3xl py-2 my-2">{!IsSignin?"Sign Up" : "Sign In"}</h1>
          
