@@ -3,7 +3,7 @@ import { backgroundImg } from "../utils/ImgConst"
 import Header from "./header"
 import { ValidateDetails } from "../utils/validation";
 import useAuth from "../utils/useAuth";
-import {  useNavigate } from "react-router-dom";
+
 
 
 const Login = () => {
@@ -19,7 +19,7 @@ const Login = () => {
   const email= useRef(null);
   const password = useRef(null);
   const name= useRef(null);
-  const Navigate=useNavigate();
+  
 
 
 
@@ -40,14 +40,14 @@ const Login = () => {
     if(!IsSignin){
       const erms=await FirebaseSignUp(email.current.value,password.current.value,name.current.value)
       if(erms) SetErrormsg(erms);
-      if(!erms)Navigate("/browse");
+    
     };
 
     // log in
     if(IsSignin){
      const erms1=await FirebaseSignIn(email.current.value,password.current.value)
      if(erms1) SetErrormsg(erms1);
-     if(!erms1)Navigate("/browse");
+
     }
 
   };

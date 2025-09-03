@@ -2,7 +2,7 @@ import { useSelector } from "react-redux"
 import { logo } from "../utils/ImgConst"
 import { signOut } from "firebase/auth";
 import { auth } from "../utils/firebase";
-import { useNavigate } from "react-router-dom";
+
 import { useState } from "react";
 import { FiChevronDown } from "react-icons/fi";
 
@@ -11,13 +11,13 @@ const Header = () => {
 
   // hooks
 const User =useSelector((state) => state.user);
-const Navigate=useNavigate();
+
 const [showDropdown, setShowDropdown] = useState(false);
 
 const HandleSignOut = () => {
   signOut(auth).then(() => {
     // Sign-out successful.
-    Navigate("/");
+   
   }).catch((error) => {
     // An error happened.
     console.error("Error signing out: ", error);
