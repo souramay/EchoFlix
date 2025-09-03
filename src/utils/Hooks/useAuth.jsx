@@ -1,8 +1,8 @@
 import { createUserWithEmailAndPassword, signInWithEmailAndPassword, updateProfile } from "firebase/auth";
 import { useDispatch } from "react-redux";
-import { addUser } from "./redux/AuthSlice";
-import { auth } from "./firebase"; // <-- import auth here
-import RandomUserPic from "./RandomUserPic";
+import { addUser } from "../redux/AuthSlice";
+import { auth } from "../firebase"; // <-- import auth here
+import RandomUserPic from "../RandomUserPic";
 
 const useAuth = () => {
   const dispatch = useDispatch();
