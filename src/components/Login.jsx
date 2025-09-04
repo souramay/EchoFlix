@@ -1,8 +1,9 @@
 import { useRef, useState } from "react"
-import { backgroundImg } from "../utils/ImgConst"
+
 import Header from "./header"
 import { ValidateDetails } from "../utils/validation";
 import useAuth from "../utils/Hooks/useAuth";
+import { backgroundImg } from "../utils/constants/ImgConst";
 
 
 

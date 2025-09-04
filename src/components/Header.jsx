@@ -1,5 +1,5 @@
 import { useSelector } from "react-redux"
-import { logo } from "../utils/ImgConst"
+import { logo } from "../utils/constants/ImgConst"
 import { signOut } from "firebase/auth";
 import { auth } from "../utils/firebase";
 
@@ -29,19 +29,19 @@ const toggleDropdown = () => {
 };
 
   return (
-    <div className="flex justify-between items-center">
+    <div className="flex justify-between items-center z-20 relative">
       <div className="w-36 mx-2">
       <img alt="logo" src={logo}  className=" w-auto   "
       /></div>
-     {User && <div className="flex p-2  justify-between items-center">
-        <div className="w-12 m-2 rounded-full bg-red-300 flex justify-center item-center">
+     {User && <div className="flex p-2 gap-4 justify-between items-center">
+        <div className="w-14 h-14 m-2  rounded-full bg-red-950 flex justify-center item-center">
         <img
   alt="profile"
   src={User.photoURL || "./userProfile/1.png"}
-  className="w-8 h-12 object-cover item-center m-full rounded-full "
+  className="w-full h-full object-cover item-center  m-full rounded-full "
 />
 </div>
-      <p className="font-bold text-red-950 text-lg">{User.displayName}</p>
+      <p className="font-bold text-white text-lg">{User.displayName}</p>
 
       <button
             onClick={toggleDropdown}
@@ -49,19 +49,19 @@ const toggleDropdown = () => {
             style={{ outline: "none" }}
           >
             <FiChevronDown
-  className={`w-6   h-6 transition-transform duration-200 mr-9 text-black font-bold  ${showDropdown ? "-rotate-180" : ""}`}
+  className={`w-6   h-6 transition-transform duration-200 mr-9 text-white font-bold  ${showDropdown ? "-rotate-180" : ""}`}
   // color prop can be omitted if using Tailwind
 />
           </button>
       
       {showDropdown && (
-        <ul className="absolute cursor-pointer right-0 mt-17 mr-7 bg-black opacity-60 rounded-t-sm">
+        <ul className="absolute  cursor-pointer right-0 mt-21 mr-7 bg-[#B71C1C]   rounded-lg onhover:scale-105 ">
             <li
-              onClick={HandleSignOut}
-              className="text-white p-2 "
-            >
-              Logout
-            </li>
+  onClick={HandleSignOut}
+  className="text-white p-2 font-sans font-bold"
+>
+  Logout
+</li>
             </ul>
           )}
 
@@ -72,5 +72,5 @@ const toggleDropdown = () => {
 }
 
 
-export default Header;    
+export default Header;
 
