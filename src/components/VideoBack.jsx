@@ -1,7 +1,7 @@
 import { useSelector } from "react-redux";
 import useFetchVideo from "../utils/Hooks/useFetchVideo";
 import { useEffect, useState } from "react";
-import { movieImageUrl } from "../utils/constants/ImgConst";
+import {  movieImageUrlforbackground } from "../utils/constants/ImgConst";
 
 const VideoBack = ({ movieId, movieImg }) => {
   useFetchVideo(movieId);
@@ -24,7 +24,7 @@ const VideoBack = ({ movieId, movieImg }) => {
   return (
     <div className=" from-black fixed inset-0 w-full h-full overflow-hidden pointer-events-none -z-10">
       <img
-        src={movieImageUrl + movieImg}
+        src={movieImageUrlforbackground + movieImg}
         alt="No Video"
         className="w-[200%] h-screen object-cover pointer-events-none"
         style={{ filter: "contrast(1.2) brightness(1.05)" }}
