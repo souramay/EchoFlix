@@ -30,8 +30,8 @@ const toggleDropdown = () => {
 };
 
   return (
-    <div className="flex justify-between items-center z-20 relative">
-      <div className="w-36 mx- 2 cursor-pointer">
+    <div className="flex justify-between items-center z-20 relative -mt-4">
+      <div className="w-36 mx-4 cursor-pointer">
       <img alt="logo" src={logo}  className=" w-auto   "
       /></div>
      {User && <div className="flex p-2 gap-4 justify-between items-center">
