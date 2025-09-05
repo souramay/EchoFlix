@@ -29,11 +29,11 @@ const Browse = () => {
   }, [moviesList, movie]);
 
   return (
-    <div className="relative w-full min-h-screen bg-gradient-to-br from-black via-black/80 to-gray-900">
+    <div className="relative w-full min-h-screen bg-gradient-to-br from-black via-black/80 to-gray-900 overflow-x-hidden">
       {/* Full-screen gradient background */}
       <div className="fixed inset-0 w-full h-full bg-gradient-to-br from-black via-black/80 to-gray-900 -z-10" />
       <Header />
-      <div className="flex flex-col px-4 pt-8">
+      <div className="flex flex-col px-4 pt-8 max-w-full">
         <div>
           <MovieRecent
             title={movie?.title}
@@ -44,11 +44,13 @@ const Browse = () => {
           />
           {movie?.id && <VideoBack movieId={movie?.id} movieImg={movie?.backdrop_path} />}
         </div>
-        <div className="w-full min-h-[400px] bg-gradient-to-br from-black/80 via-gray-900/80 to-black/80 rounded-t-3xl py-8 px-4 z-10 mt-8">
-        <SecondaryComponent title={"Upcoming"} movies={UpcomingMovies} />
-          <SecondaryComponent title={"Now Playing"} movies={moviesList} />
-          <SecondaryComponent title={"Popular"} movies={popularMovies} />
-          <SecondaryComponent title={"Top Rated"} movies={TopratedMovies} />
+        <div className="w-full min-h-[400px] bg-gradient-to-br from-black/80 via-gray-900/80 to-black/80 rounded-t-3xl py-4 pl-4 pr-2 z-10 mt-8 sm:py-12 sm:pl-6 sm:pr-4 md:py-13 md:pl-8 md:pr-6 lg:py-34 lg:pl-10 lg:pr-7 max-w-full overflow-hidden">
+          <div className="space-y-4 sm:space-y-6 md:space-y-8 lg:space-y-6">
+            <SecondaryComponent title={"Upcoming"} movies={UpcomingMovies} />
+            <SecondaryComponent title={"Now Playing"} movies={moviesList} />
+            <SecondaryComponent title={"Popular"} movies={popularMovies} />
+            <SecondaryComponent title={"Top Rated"} movies={TopratedMovies} />
+          </div>
         </div>
       </div>
     </div>

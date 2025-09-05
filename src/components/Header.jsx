@@ -31,18 +31,18 @@ const toggleDropdown = () => {
 
   return (
     <div className="flex justify-between items-center z-20 relative">
-      <div className="w-36 mx-2">
+      <div className="w-36 mx- 2 cursor-pointer">
       <img alt="logo" src={logo}  className=" w-auto   "
       /></div>
      {User && <div className="flex p-2 gap-4 justify-between items-center">
-        <div className="w-14 h-14 m-2  rounded-full bg-red-950 flex justify-center item-center">
+        <div className="w-14 h-14 m-2  rounded-full bg-red-950 flex justify-center item-center cursor-pointer">
         <img
   alt="profile"
   src={User.photoURL || "./userProfile/1.png"}
   className="w-full h-full object-cover item-center  m-full rounded-full "
 />
 </div>
-      <p className="font-bold text-white text-lg">{User.displayName}</p>
+      <p className="font-bold text-white text-lg cursor-pointer">{User.displayName}</p>
 
       <button
             onClick={toggleDropdown}
@@ -56,7 +56,7 @@ const toggleDropdown = () => {
           </button>
       
       {showDropdown && (
-        <ul className="absolute  cursor-pointer right-0 mt-21 mr-7 bg-[#B71C1C]   rounded-lg onhover:scale-105 ">
+        <ul className="absolute  cursor-pointer right-0 mt-21 mr-7 bg-[#B71C1C]   rounded-lg hover:scale-105 ">
             <li
   onClick={HandleSignOut}
   className="text-white p-2 font-sans font-bold"
