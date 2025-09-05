@@ -7,7 +7,14 @@
       "**/node_modules/**"
     ],
     "rewrites": [
-      { "source": "**", "destination": "/index.html" }
+      {
+        "source": "/api/**",
+        "function": "api"
+      },
+      { 
+        "source": "**", 
+        "destination": "/index.html" 
+      }
     ],
     "headers": [
       {
@@ -15,7 +22,7 @@
         "headers": [
           {
             "key": "Cache-Control",
-            "value": "no-cache, no-store, must-revalidate"
+            "value": "public, max-age=300"
           },
           {
             "key": "Access-Control-Allow-Origin",
@@ -28,6 +35,22 @@
           {
             "key": "Access-Control-Allow-Headers",
             "value": "Content-Type, Authorization"
+          },
+          {
+            "key": "X-Content-Type-Options",
+            "value": "nosniff"
+          },
+          {
+            "key": "X-Frame-Options",
+            "value": "SAMEORIGIN"
+          },
+          {
+            "key": "Referrer-Policy",
+            "value": "strict-origin-when-cross-origin"
+          },
+          {
+            "key": "Connection",
+            "value": "keep-alive"
           }
         ]
       }

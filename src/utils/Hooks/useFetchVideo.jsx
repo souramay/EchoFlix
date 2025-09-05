@@ -1,4 +1,3 @@
-import axios from "axios";
 import { useDispatch } from "react-redux";
 import { setVideoId } from "../redux/MovieSlice";
 import { useEffect } from "react";
@@ -13,9 +12,10 @@ const useFetchVideo = (movieId) => {
    
     const url = firstpartVideoUrl+ movieId+'/videos';
       const fetchVideo = async () => {
-        const videoData = await axios.get(url,options);
-        dispatch(setVideoId(videoData.data.results));
-        // console.log(videoData.data);
+        const response = await fetch(url,options);
+        const videoData = await response.json();
+        dispatch(setVideoId(videoData.results));
+        // console.log(videoData);
       }
 
     useEffect(() => {

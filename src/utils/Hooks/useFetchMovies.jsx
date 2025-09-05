@@ -1,4 +1,3 @@
-import axios from "axios";
 import { useEffect } from "react"
 import { useDispatch } from "react-redux";
 import options from "../constants/constantMovie";
@@ -9,9 +8,10 @@ const useFetchMovies = (url,storeadd) => {
     
       const fetchnowplayingmovies=async()=>{
         
-        const nowPlayingMovies = await axios.get(url,options);
-        dispatch(storeadd(nowPlayingMovies.data.results));
-        // console.log(nowPlayingMovies.data);
+        const response = await fetch(url, options);
+        const data = await response.json();
+        dispatch(storeadd(data.results));
+        // console.log(data);
       }
     
     useEffect( ()=>{
