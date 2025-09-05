@@ -3,9 +3,9 @@ import AppRoutes from "./components/AppRoutes";
 import {  useDispatch } from "react-redux";
 
 import { onAuthStateChanged } from "firebase/auth";
-import { auth } from "./utils/firebase";
 import { addUser, removeUser } from "./utils/redux/AuthSlice";
 import { useNavigate } from "react-router-dom";
+import { auth } from "./utils/constants/GetAuthfirebase";
 
 function App() {
   

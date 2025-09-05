@@ -1,10 +1,11 @@
 import { useSelector } from "react-redux"
 import { logo } from "../utils/constants/ImgConst"
 import { signOut } from "firebase/auth";
-import { auth } from "../utils/firebase";
+
 
 import { useState } from "react";
 import { FiChevronDown } from "react-icons/fi";
+import { auth } from "../utils/constants/GetAuthfirebase";
 
 
 const Header = () => {
