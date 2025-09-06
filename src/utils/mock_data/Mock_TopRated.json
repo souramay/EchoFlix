@@ -1,350 +1,24 @@
 {
-    "dates": {
-        "maximum": "2025-10-01",
-        "minimum": "2025-09-10"
-    },
     "page": 1,
     "results": [
         {
             "adult": false,
-            "backdrop_path": "/1RgPyOhN4DRs225BGTlHJqCudII.jpg",
+            "backdrop_path": "/pNjh59JSxChQktamG3LMp9ZoQzp.jpg",
             "genre_ids": [
-                16,
-                28,
-                14,
-                53
-            ],
-            "id": 1311031,
-            "original_language": "ja",
-            "original_title": "劇場版「鬼滅の刃」無限城編 第一章 猗窩座再来",
-            "overview": "The Demon Slayer Corps are drawn into the Infinity Castle, where Tanjiro, Nezuko, and the Hashira face terrifying Upper Rank demons in a desperate fight as the final battle against Muzan Kibutsuji begins.",
-            "popularity": 262.8372,
-            "poster_path": "/aFRDH3P7TX61FVGpaLhKr6QiOC1.jpg",
-            "release_date": "2025-07-18",
-            "title": "Demon Slayer: Kimetsu no Yaiba Infinity Castle",
-            "video": false,
-            "vote_average": 7.3,
-            "vote_count": 102
-        },
-        {
-            "adult": false,
-            "backdrop_path": "/fBlzTwgtbDYkDKlhnPu69jHfVGy.jpg",
-            "genre_ids": [
-                27,
-                10749
-            ],
-            "id": 1242011,
-            "original_language": "en",
-            "original_title": "Together",
-            "overview": "With a move to the countryside already testing the limits of a couple's relationship, a supernatural encounter begins an extreme transformation of their love, their lives, and their flesh.",
-            "popularity": 223.378,
-            "poster_path": "/6MJxjNxjgAtuBEOVYtuF4yUYXZC.jpg",
-            "release_date": "2025-07-23",
-            "title": "Together",
-            "video": false,
-            "vote_average": 7.15,
-            "vote_count": 360
-        },
-        {
-            "adult": false,
-            "backdrop_path": "/9DYFYhmbXRGsMhfUgXM3VSP9uLX.jpg",
-            "genre_ids": [
-                27
-            ],
-            "id": 1038392,
-            "original_language": "en",
-            "original_title": "The Conjuring: Last Rites",
-            "overview": "Paranormal investigators Ed and Lorraine Warren take on one last terrifying case involving mysterious entities they must confront.",
-            "popularity": 343.4151,
-            "poster_path": "/8XfIKOPmuCZLh5ooK13SPKeybWF.jpg",
-            "release_date": "2025-09-03",
-            "title": "The Conjuring: Last Rites",
-            "video": false,
-            "vote_average": 7.417,
-            "vote_count": 48
-        },
-        {
-            "adult": false,
-            "backdrop_path": "/jvpkBenB6hv19WWYVlaiow8zklq.jpg",
-            "genre_ids": [
-                16,
-                10751,
-                35,
-                80,
-                12
-            ],
-            "id": 1175942,
-            "original_language": "en",
-            "original_title": "The Bad Guys 2",
-            "overview": "The now-reformed Bad Guys are trying (very, very hard) to be good, but instead find themselves hijacked into a high-stakes, globe-trotting heist, masterminded by a new team of criminals they never saw coming: The Bad Girls.",
-            "popularity": 167.4735,
-            "poster_path": "/5DJbIWxIotQYUnRrRGhSxjxmvye.jpg",
-            "release_date": "2025-07-24",
-            "title": "The Bad Guys 2",
-            "video": false,
-            "vote_average": 7.77,
-            "vote_count": 305
-        },
-        {
-            "adult": false,
-            "backdrop_path": "/zxi6WQPVc0uQAG5TtLsKvxYHApC.jpg",
-            "genre_ids": [
-                16,
-                14,
-                12,
-                28
-            ],
-            "id": 980477,
-            "original_language": "zh",
-            "original_title": "哪吒之魔童闹海",
-            "overview": "After a catastrophic event leaves their bodies destroyed, Ne Zha and Ao Bing are granted a fragile second chance at life. As tensions rise between the dragon clans and celestial forces, the two must undergo a series of perilous trials that will test their bond, challenge their identities, and decide the fate of both mortals and immortals.",
-            "popularity": 98.5226,
-            "poster_path": "/cb5NyNrqiCNNoDkA8FfxHAtypdG.jpg",
-            "release_date": "2025-01-29",
-            "title": "Ne Zha 2",
-            "video": false,
-            "vote_average": 8.056,
-            "vote_count": 340
-        },
-        {
-            "adult": false,
-            "backdrop_path": "/4BtL2vvEufDXDP4u6xQjjQ1Y2aT.jpg",
-            "genre_ids": [
-                28,
-                80,
-                53
-            ],
-            "id": 1419406,
-            "original_language": "zh",
-            "original_title": "捕风追影",
-            "overview": "Macau Police brings the tracking expert police officer out of retirement to help catch a dangerous group of professional thieves.",
-            "popularity": 66.6443,
-            "poster_path": "/e0RU6KpdnrqFxDKlI3NOqN8nHL6.jpg",
-            "release_date": "2025-08-16",
-            "title": "The Shadow's Edge",
-            "video": false,
-            "vote_average": 7.5,
-            "vote_count": 20
-        },
-        {
-            "adult": false,
-            "backdrop_path": "/9whEVuKte4Qi0LI4TzPf7glinJW.jpg",
-            "genre_ids": [
-                16,
-                10751,
-                14
-            ],
-            "id": 936108,
-            "original_language": "en",
-            "original_title": "Smurfs",
-            "overview": "When Papa Smurf is mysteriously taken by evil wizards, Razamel and Gargamel, Smurfette leads the Smurfs on a mission into the real world to save him. With the help of new friends, the Smurfs must discover what defines their destiny to save the universe.",
-            "popularity": 53.1848,
-            "poster_path": "/8o6lkhL32xQJeB52IIG1us5BVey.jpg",
-            "release_date": "2025-07-05",
-            "title": "Smurfs",
-            "video": false,
-            "vote_average": 6.1,
-            "vote_count": 160
-        },
-        {
-            "adult": false,
-            "backdrop_path": "/3htgvJ6d0GV633oHYueeISk8J7w.jpg",
-            "genre_ids": [
-                12,
-                14,
-                35,
-                10751
-            ],
-            "id": 1319969,
-            "original_language": "en",
-            "original_title": "Sketch",
-            "overview": "When a young girl’s sketchbook falls into a strange pond, her drawings come to life—chaotic, real, and on the loose. As the town descends into chaos, her family must reunite and stop the monsters they never meant to unleash.",
-            "popularity": 42.431,
-            "poster_path": "/sxiDj3dTgZuCPkx30Jvyq8K9QUV.jpg",
-            "release_date": "2025-08-06",
-            "title": "Sketch",
-            "video": false,
-            "vote_average": 7.375,
-            "vote_count": 36
-        },
-        {
-            "adult": false,
-            "backdrop_path": "/vcFs7lPVMOvYX7KMkDw66iUpoYp.jpg",
-            "genre_ids": [
-                14,
                 18,
-                27
+                80
             ],
-            "id": 1020822,
-            "original_language": "fr",
-            "original_title": "Animale",
-            "overview": "Camargue, France - Nejma trains hard to win the local bullfighting competition. When she is mauled after a celebration, she starts to notice disturbing changes. News of a rogue bull on the loose terrifies the community, killing young men.",
-            "popularity": 37.635,
-            "poster_path": "/htOG0XTgTLTSIraMvc468XZsUKP.jpg",
-            "release_date": "2024-09-20",
-            "title": "Animale",
-            "video": false,
-            "vote_average": 6.8,
-            "vote_count": 19
-        },
-        {
-            "adult": false,
-            "backdrop_path": "/9ZhhlJbtLmzjvdbxbNzHZEBFdIZ.jpg",
-            "genre_ids": [
-                80,
-                53,
-                35
-            ],
-            "id": 1245993,
+            "id": 278,
             "original_language": "en",
-            "original_title": "Caught Stealing",
-            "overview": "Burned-out ex-baseball player Hank Thompson unexpectedly finds himself embroiled in a dangerous struggle for survival amidst the criminal underbelly of 1990s New York City, forced to navigate a treacherous underworld he never imagined.",
-            "popularity": 34.6015,
-            "poster_path": "/cvda8s5J8YaHjTyEyXQpvD6f3iV.jpg",
-            "release_date": "2025-08-26",
-            "title": "Caught Stealing",
+            "original_title": "The Shawshank Redemption",
+            "overview": "Imprisoned in the 1940s for the double murder of his wife and her lover, upstanding banker Andy Dufresne begins a new life at the Shawshank prison, where he puts his accounting skills to work for an amoral warden. During his long stretch in prison, Dufresne comes to be admired by the other inmates -- including an older prisoner named Red -- for his integrity and unquenchable sense of hope.",
+            "popularity": 28.0158,
+            "poster_path": "/9cqNxx0GxF0bflZmeSMuL5tnGzr.jpg",
+            "release_date": "1994-09-23",
+            "title": "The Shawshank Redemption",
             "video": false,
-            "vote_average": 6.969,
-            "vote_count": 131
-        },
-        {
-            "adult": false,
-            "backdrop_path": "/eNSUknQqzTXWE5EeT8ZnVccEPR0.jpg",
-            "genre_ids": [
-                27,
-                53
-            ],
-            "id": 1285965,
-            "original_language": "en",
-            "original_title": "Dangerous Animals",
-            "overview": "A savvy and free-spirited surfer is abducted by a shark-obsessed serial killer. Held captive on his boat, she must figure out how to escape before he carries out a ritualistic feeding to the sharks below.",
-            "popularity": 29.9982,
-            "poster_path": "/9tk3Si960hg4E49eMt81dS7Qe9Z.jpg",
-            "release_date": "2025-06-05",
-            "title": "Dangerous Animals",
-            "video": false,
-            "vote_average": 6.476,
-            "vote_count": 232
-        },
-        {
-            "adult": false,
-            "backdrop_path": "/3Rfvhy1Nl6sSGJwyjb0QiZzZYlB.jpg",
-            "genre_ids": [
-                16,
-                12,
-                10751,
-                35
-            ],
-            "id": 862,
-            "original_language": "en",
-            "original_title": "Toy Story",
-            "overview": "Led by Woody, Andy's toys live happily in his room until Andy's birthday brings Buzz Lightyear onto the scene. Afraid of losing his place in Andy's heart, Woody plots against Buzz. But when circumstances separate Buzz and Woody from their owner, the duo eventually learns to put aside their differences.",
-            "popularity": 26.7178,
-            "poster_path": "/uXDfjJbdP4ijW5hWSBrPrlKpxab.jpg",
-            "release_date": "1995-11-22",
-            "title": "Toy Story",
-            "video": false,
-            "vote_average": 7.97,
-            "vote_count": 19092
-        },
-        {
-            "adult": false,
-            "backdrop_path": "/eQV9rSQ6S1ja4lGTwHTnQuVhoG.jpg",
-            "genre_ids": [
-                27,
-                35,
-                14,
-                18
-            ],
-            "id": 1284120,
-            "original_language": "no",
-            "original_title": "Den stygge stesøsteren",
-            "overview": "In a fairy-tale kingdom where beauty is a brutal business, Elvira battles to compete with her incredibly beautiful stepsister, and she will go to any length to catch the prince’s eye.",
-            "popularity": 28.3956,
-            "poster_path": "/crX9rSg9EohybhkEe8iTQUCe55y.jpg",
-            "release_date": "2025-03-07",
-            "title": "The Ugly Stepsister",
-            "video": false,
-            "vote_average": 7.2,
-            "vote_count": 347
-        },
-        {
-            "adult": false,
-            "backdrop_path": null,
-            "genre_ids": [
-                18
-            ],
-            "id": 1091043,
-            "original_language": "ta",
-            "original_title": "தண்டகாரண்யம்",
-            "overview": "A young man’s struggles to secure a government job.",
-            "popularity": 28.8658,
-            "poster_path": "/enkPbejfPmM8o2bgbhnLSX4fCAV.jpg",
-            "release_date": "2025-09-19",
-            "title": "Thandakaaranyam",
-            "video": false,
-            "vote_average": 0,
-            "vote_count": 0
-        },
-        {
-            "adult": false,
-            "backdrop_path": "/8rpDcsfLJypbO6vREc0547VKqEv.jpg",
-            "genre_ids": [
-                878,
-                12,
-                28
-            ],
-            "id": 76600,
-            "original_language": "en",
-            "original_title": "Avatar: The Way of Water",
-            "overview": "Set more than a decade after the events of the first film, learn the story of the Sully family (Jake, Neytiri, and their kids), the trouble that follows them, the lengths they go to keep each other safe, the battles they fight to stay alive, and the tragedies they endure.",
-            "popularity": 24.263,
-            "poster_path": "/t6HIqrRAclMCA60NsSmeqe9RmNV.jpg",
-            "release_date": "2022-12-14",
-            "title": "Avatar: The Way of Water",
-            "video": false,
-            "vote_average": 7.612,
-            "vote_count": 12838
-        },
-        {
-            "adult": false,
-            "backdrop_path": "/cWJonyOJESS10tF6DyH9kMBsLh.jpg",
-            "genre_ids": [
-                27,
-                14,
-                10749
-            ],
-            "id": 1246049,
-            "original_language": "fr",
-            "original_title": "Dracula",
-            "overview": "The story of 15th century Prince Vladimir who curses God following the death of his beloved wife and is turned into a vampire. Later, in 19th century London, he discovers his wife’s doppelgänger and dooms himself by pursuing her.",
-            "popularity": 27.8016,
-            "poster_path": "/juUIOcOQ0ip9qw3ecH9IBEQklEp.jpg",
-            "release_date": "2025-07-30",
-            "title": "Dracula: A Love Tale",
-            "video": false,
-            "vote_average": 6.4,
-            "vote_count": 51
-        },
-        {
-            "adult": false,
-            "backdrop_path": "/xgU3KkqiME9pGe5gGCNpUYkoSWg.jpg",
-            "genre_ids": [
-                27,
-                53,
-                12
-            ],
-            "id": 578,
-            "original_language": "en",
-            "original_title": "Jaws",
-            "overview": "When the seaside community of Amity finds itself under attack by a dangerous great white shark, the town's chief of police, a young marine biologist, and a grizzled hunter embark on a desperate quest to destroy the beast before it strikes again.",
-            "popularity": 25.6682,
-            "poster_path": "/lxM6kqilAdpdhqUl2biYp5frUxE.jpg",
-            "release_date": "1975-06-20",
-            "title": "Jaws",
-            "video": false,
-            "vote_average": 7.676,
-            "vote_count": 10981
+            "vote_average": 8.712,
+            "vote_count": 28823
         },
         {
             "adult": false,
@@ -362,49 +36,364 @@
             "release_date": "1972-03-14",
             "title": "The Godfather",
             "video": false,
-            "vote_average": 8.7,
+            "vote_average": 8.686,
             "vote_count": 21793
         },
         {
             "adult": false,
-            "backdrop_path": "/1KwliRKTw61fRGmbG4Sf8eWOHP.jpg",
+            "backdrop_path": "/kGzFbGhp99zva6oZODW5atUtnqi.jpg",
             "genre_ids": [
-                28,
-                35,
+                18,
                 80
             ],
-            "id": 1181540,
+            "id": 240,
             "original_language": "en",
-            "original_title": "Guns Up",
-            "overview": "When a job goes horribly wrong, an ex-cop and family man who moonlights as a mob henchman has one night to get his family out of the city.",
-            "popularity": 24.3717,
-            "poster_path": "/3RokBWEkQqJRZEVP3DPwGm5MYh6.jpg",
-            "release_date": "2025-05-15",
-            "title": "Guns Up",
+            "original_title": "The Godfather Part II",
+            "overview": "In the continuing saga of the Corleone crime family, a young Vito Corleone grows up in Sicily and in 1910s New York. In the 1950s, Michael Corleone attempts to expand the family business into Las Vegas, Hollywood and Cuba.",
+            "popularity": 23.3288,
+            "poster_path": "/hek3koDUyRQk7FIhPXsa6mT2Zc3.jpg",
+            "release_date": "1974-12-20",
+            "title": "The Godfather Part II",
             "video": false,
-            "vote_average": 6.878,
-            "vote_count": 86
+            "vote_average": 8.571,
+            "vote_count": 13163
         },
         {
             "adult": false,
-            "backdrop_path": "/qJzloL8O9YHhiWBrhlPfKAtZu2I.jpg",
+            "backdrop_path": "/zb6fM1CX41D9rF9hdgclu0peUmy.jpg",
             "genre_ids": [
+                18,
+                36,
+                10752
+            ],
+            "id": 424,
+            "original_language": "en",
+            "original_title": "Schindler's List",
+            "overview": "The true story of how businessman Oskar Schindler saved over a thousand Jewish lives from the Nazis while they worked as slaves in his factory during World War II.",
+            "popularity": 12.6752,
+            "poster_path": "/sF1U4EUQS8YHUYjNl3pMGNIQyr0.jpg",
+            "release_date": "1993-12-15",
+            "title": "Schindler's List",
+            "video": false,
+            "vote_average": 8.566,
+            "vote_count": 16678
+        },
+        {
+            "adult": false,
+            "backdrop_path": "/bxgTSUenZDHNFerQ1whRKplrMKF.jpg",
+            "genre_ids": [
+                18
+            ],
+            "id": 389,
+            "original_language": "en",
+            "original_title": "12 Angry Men",
+            "overview": "The defense and the prosecution have rested and the jury is filing into the jury room to decide if a young Spanish-American is guilty or innocent of murdering his father. What begins as an open and shut case soon becomes a mini-drama of each of the jurors' prejudices and preconceptions about the trial, the accused, and each other.",
+            "popularity": 16.9572,
+            "poster_path": "/ow3wq89wM8qd5X7hWKxiRfsFf9C.jpg",
+            "release_date": "1957-04-10",
+            "title": "12 Angry Men",
+            "video": false,
+            "vote_average": 8.5,
+            "vote_count": 9368
+        },
+        {
+            "adult": false,
+            "backdrop_path": "/ukfI9QkU1aIhOhKXYWE9n3z1mFR.jpg",
+            "genre_ids": [
+                16,
+                10751,
+                14
+            ],
+            "id": 129,
+            "original_language": "ja",
+            "original_title": "千と千尋の神隠し",
+            "overview": "A young girl, Chihiro, becomes trapped in a strange new world of spirits. When her parents undergo a mysterious transformation, she must call upon the courage she never knew she had to free her family.",
+            "popularity": 18.9831,
+            "poster_path": "/39wmItIWsg5sZMyRUHLkWBcuVCM.jpg",
+            "release_date": "2001-07-20",
+            "title": "Spirited Away",
+            "video": false,
+            "vote_average": 8.535,
+            "vote_count": 17451
+        },
+        {
+            "adult": false,
+            "backdrop_path": "/enNubozHn9pXi0ycTVYUWfpHZm.jpg",
+            "genre_ids": [
+                18,
                 28,
+                80,
+                53
+            ],
+            "id": 155,
+            "original_language": "en",
+            "original_title": "The Dark Knight",
+            "overview": "Batman raises the stakes in his war on crime. With the help of Lt. Jim Gordon and District Attorney Harvey Dent, Batman sets out to dismantle the remaining criminal organizations that plague the streets. The partnership proves to be effective, but they soon find themselves prey to a reign of chaos unleashed by a rising criminal mastermind known to the terrified citizens of Gotham as the Joker.",
+            "popularity": 27.7159,
+            "poster_path": "/qJ2tW6WMUDux911r6m7haRef0WH.jpg",
+            "release_date": "2008-07-16",
+            "title": "The Dark Knight",
+            "video": false,
+            "vote_average": 8.523,
+            "vote_count": 34332
+        },
+        {
+            "adult": false,
+            "backdrop_path": "/rRs4eLjEuUHEVZl0BW4qRckbB4X.jpg",
+            "genre_ids": [
+                35,
+                18,
+                10749
+            ],
+            "id": 19404,
+            "original_language": "hi",
+            "original_title": "दिलवाले दुल्हनिया ले जायेंगे",
+            "overview": "Raj is a rich, carefree, happy-go-lucky second generation NRI. Simran is the daughter of Chaudhary Baldev Singh, who in spite of being an NRI is very strict about adherence to Indian values. Simran has left for India to be married to her childhood fiancé. Raj leaves for India with a mission at his hands, to claim his lady love under the noses of her whole family. Thus begins a saga.",
+            "popularity": 7.2967,
+            "poster_path": "/2CAL2433ZeIihfX1Hb2139CX0pW.jpg",
+            "release_date": "1995-10-20",
+            "title": "Dilwale Dulhania Le Jayenge",
+            "video": false,
+            "vote_average": 8.515,
+            "vote_count": 4506
+        },
+        {
+            "adult": false,
+            "backdrop_path": "/vxJ08SvwomfKbpboCWynC3uqUg4.jpg",
+            "genre_ids": [
+                14,
+                18,
+                80
+            ],
+            "id": 497,
+            "original_language": "en",
+            "original_title": "The Green Mile",
+            "overview": "A supernatural tale set on death row in a Southern prison, where gentle giant John Coffey possesses the mysterious power to heal people's ailments. When the cell block's head guard, Paul Edgecomb, recognizes Coffey's miraculous gift, he tries desperately to help stave off the condemned man's execution.",
+            "popularity": 18.8439,
+            "poster_path": "/8VG8fDNiy50H4FedGwdSVUPoaJe.jpg",
+            "release_date": "1999-12-10",
+            "title": "The Green Mile",
+            "video": false,
+            "vote_average": 8.503,
+            "vote_count": 18339
+        },
+        {
+            "adult": false,
+            "backdrop_path": "/hiKmpZMGZsrkA3cdce8a7Dpos1j.jpg",
+            "genre_ids": [
+                35,
+                53,
+                18
+            ],
+            "id": 496243,
+            "original_language": "ko",
+            "original_title": "기생충",
+            "overview": "All unemployed, Ki-taek's family takes peculiar interest in the wealthy and glamorous Parks for their livelihood until they get entangled in an unexpected incident.",
+            "popularity": 20.4879,
+            "poster_path": "/7IiTTgloJzvGI1TAYymCfbfl3vT.jpg",
+            "release_date": "2019-05-30",
+            "title": "Parasite",
+            "video": false,
+            "vote_average": 8.497,
+            "vote_count": 19437
+        },
+        {
+            "adult": false,
+            "backdrop_path": "/2u7zbn8EudG6kLlBzUYqP8RyFU4.jpg",
+            "genre_ids": [
+                12,
+                14,
+                28
+            ],
+            "id": 122,
+            "original_language": "en",
+            "original_title": "The Lord of the Rings: The Return of the King",
+            "overview": "As armies mass for a final battle that will decide the fate of the world--and powerful, ancient forces of Light and Dark compete to determine the outcome--one member of the Fellowship of the Ring is revealed as the noble heir to the throne of the Kings of Men. Yet, the sole hope for triumph over evil lies with a brave hobbit, Frodo, who, accompanied by his loyal friend Sam and the hideous, wretched Gollum, ventures deep into the very dark heart of Mordor on his seemingly impossible quest to destroy the Ring of Power.​",
+            "popularity": 21.3659,
+            "poster_path": "/rCzpDGLbOoPwLjy3OAm5NUPOTrC.jpg",
+            "release_date": "2003-12-17",
+            "title": "The Lord of the Rings: The Return of the King",
+            "video": false,
+            "vote_average": 8.488,
+            "vote_count": 25417
+        },
+        {
+            "adult": false,
+            "backdrop_path": "/suaEOtk1N1sgg2MTM7oZd2cfVp3.jpg",
+            "genre_ids": [
+                53,
+                80,
+                35,
+                18
+            ],
+            "id": 680,
+            "original_language": "en",
+            "original_title": "Pulp Fiction",
+            "overview": "A burger-loving hit man, his philosophical partner, a drug-addled gangster's moll and a washed-up boxer converge in this sprawling, comedic crime caper. Their adventures unfurl in three stories that ingeniously trip back and forth in time.",
+            "popularity": 17.9889,
+            "poster_path": "/vQWk5YBFWF4bZaofAbv0tShwBvQ.jpg",
+            "release_date": "1994-09-10",
+            "title": "Pulp Fiction",
+            "video": false,
+            "vote_average": 8.487,
+            "vote_count": 29040
+        },
+        {
+            "adult": false,
+            "backdrop_path": "/8x9iKH8kWA0zdkgNdpAew7OstYe.jpg",
+            "genre_ids": [
+                16,
+                10749,
+                18
+            ],
+            "id": 372058,
+            "original_language": "ja",
+            "original_title": "君の名は。",
+            "overview": "High schoolers Mitsuha and Taki are complete strangers living separate lives. But one night, they suddenly switch places. Mitsuha wakes up in Taki’s body, and he in hers. This bizarre occurrence continues to happen randomly, and the two must adjust their lives around each other.",
+            "popularity": 13.2747,
+            "poster_path": "/q719jXXEzOoYaps6babgKnONONX.jpg",
+            "release_date": "2016-08-26",
+            "title": "Your Name.",
+            "video": false,
+            "vote_average": 8.479,
+            "vote_count": 11957
+        },
+        {
+            "adult": false,
+            "backdrop_path": "/67HggiWaP9ZLv5sPYmyRV37yAJM.jpg",
+            "genre_ids": [
+                35,
+                18,
+                10749
+            ],
+            "id": 13,
+            "original_language": "en",
+            "original_title": "Forrest Gump",
+            "overview": "A man with a low IQ has accomplished great things in his life and been present during significant historic events—in each case, far exceeding what anyone imagined he could do. But despite all he has achieved, his one true love eludes him.",
+            "popularity": 20.9997,
+            "poster_path": "/arw2vcBveWOVZr6pxd9XTd1TdQa.jpg",
+            "release_date": "1994-06-23",
+            "title": "Forrest Gump",
+            "video": false,
+            "vote_average": 8.466,
+            "vote_count": 28594
+        },
+        {
+            "adult": false,
+            "backdrop_path": "/x4biAVdPVCghBlsVIzB6NmbghIz.jpg",
+            "genre_ids": [
+                37
+            ],
+            "id": 429,
+            "original_language": "it",
+            "original_title": "Il buono, il brutto, il cattivo",
+            "overview": "While the Civil War rages on between the Union and the Confederacy, three men – a quiet loner, a ruthless hitman, and a Mexican bandit – comb the American Southwest in search of a strongbox containing $200,000 in stolen gold.",
+            "popularity": 10.5784,
+            "poster_path": "/bX2xnavhMYjWDoZp1VM6VnU1xwe.jpg",
+            "release_date": "1966-12-22",
+            "title": "The Good, the Bad and the Ugly",
+            "video": false,
+            "vote_average": 8.465,
+            "vote_count": 9149
+        },
+        {
+            "adult": false,
+            "backdrop_path": "/vgnoBSVzWAV9sNQUORaDGvDp7wx.jpg",
+            "genre_ids": [
+                12,
+                18,
                 878
             ],
-            "id": 557,
+            "id": 157336,
             "original_language": "en",
-            "original_title": "Spider-Man",
-            "overview": "After being bitten by a genetically altered spider at Oscorp, nerdy but endearing high school student Peter Parker is endowed with amazing powers to become the superhero known as Spider-Man.",
-            "popularity": 25.893,
-            "poster_path": "/gh4cZbhZxyTbgxQPxD0dOudNPTn.jpg",
-            "release_date": "2002-05-01",
-            "title": "Spider-Man",
+            "original_title": "Interstellar",
+            "overview": "The adventures of a group of explorers who make use of a newly discovered wormhole to surpass the limitations on human space travel and conquer the vast distances involved in an interstellar voyage.",
+            "popularity": 46.0723,
+            "poster_path": "/gEU2QniE6E77NI6lCU6MxlNBvIx.jpg",
+            "release_date": "2014-11-05",
+            "title": "Interstellar",
             "video": false,
-            "vote_average": 7.315,
-            "vote_count": 19855
+            "vote_average": 8.46,
+            "vote_count": 37776
+        },
+        {
+            "adult": false,
+            "backdrop_path": "/7TF4p86ZafnxFuNqWdhpHXFO244.jpg",
+            "genre_ids": [
+                18,
+                80
+            ],
+            "id": 769,
+            "original_language": "en",
+            "original_title": "GoodFellas",
+            "overview": "The true story of Henry Hill, a half-Irish, half-Sicilian Brooklyn kid who is adopted by neighbourhood gangsters at an early age and climbs the ranks of a Mafia family under the guidance of Jimmy Conway.",
+            "popularity": 12.4147,
+            "poster_path": "/aKuFiU82s5ISJpGZp7YkIr3kCUd.jpg",
+            "release_date": "1990-09-12",
+            "title": "GoodFellas",
+            "video": false,
+            "vote_average": 8.455,
+            "vote_count": 13596
+        },
+        {
+            "adult": false,
+            "backdrop_path": "/qvZ91FwMq6O47VViAr8vZNQz3WI.jpg",
+            "genre_ids": [
+                28,
+                18
+            ],
+            "id": 346,
+            "original_language": "ja",
+            "original_title": "七人の侍",
+            "overview": "A samurai answers a village's request for protection after he falls on hard times. The town needs protection from bandits, so the samurai gathers six others to help him teach the people how to defend themselves, and the villagers provide the soldiers with food.",
+            "popularity": 7.1343,
+            "poster_path": "/lOMGc8bnSwQhS4XyE1S99uH8NXf.jpg",
+            "release_date": "1954-04-26",
+            "title": "Seven Samurai",
+            "video": false,
+            "vote_average": 8.454,
+            "vote_count": 3974
+        },
+        {
+            "adult": false,
+            "backdrop_path": "/dlC0ed9Ugh3FzydnkBtV5lRXUu4.jpg",
+            "genre_ids": [
+                16,
+                18,
+                10752
+            ],
+            "id": 12477,
+            "original_language": "ja",
+            "original_title": "火垂るの墓",
+            "overview": "In the final months of World War II, 14-year-old Seita and his sister Setsuko are orphaned when their mother is killed during an air raid in Kobe, Japan. After a falling out with their aunt, they move into an abandoned bomb shelter. With no surviving relatives and their emergency rations depleted, Seita and Setsuko struggle to survive.",
+            "popularity": 0.0083,
+            "poster_path": "/k9tv1rXZbOhH7eiCk378x61kNQ1.jpg",
+            "release_date": "1988-04-16",
+            "title": "Grave of the Fireflies",
+            "video": false,
+            "vote_average": 8.45,
+            "vote_count": 6038
+        },
+        {
+            "adult": false,
+            "backdrop_path": "/6aNKD81RHR1DqUUa8kOZ1TBY1Lp.jpg",
+            "genre_ids": [
+                35,
+                18
+            ],
+            "id": 637,
+            "original_language": "it",
+            "original_title": "La vita è bella",
+            "overview": "A touching story of an Italian book seller of Jewish ancestry who lives in his own little fairy tale. His creative and happy life would come to an abrupt halt when his entire family is deported to a concentration camp during World War II. While locked up he tries to convince his son that the whole thing is just a game.",
+            "popularity": 8.0103,
+            "poster_path": "/mfnkSeeVOBVheuyn2lo4tfmOPQb.jpg",
+            "release_date": "1997-12-20",
+            "title": "Life Is Beautiful",
+            "video": false,
+            "vote_average": 8.441,
+            "vote_count": 13523
         }
     ],
-    "total_pages": 65,
-    "total_results": 1293
+    "total_pages": 516,
+    "total_results": 10319
 }

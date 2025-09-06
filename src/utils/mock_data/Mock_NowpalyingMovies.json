@@ -1,25 +1,10 @@
 {
+    "dates": {
+        "maximum": "2025-09-10",
+        "minimum": "2025-07-30"
+    },
     "page": 1,
     "results": [
-        {
-            "adult": false,
-            "backdrop_path": "/iZLqwEwUViJdSkGVjePGhxYzbDb.jpg",
-            "genre_ids": [
-                878,
-                53
-            ],
-            "id": 755898,
-            "original_language": "en",
-            "original_title": "War of the Worlds",
-            "overview": "Will Radford is a top analyst for Homeland Security who tracks potential threats through a mass surveillance program, until one day an attack by an unknown entity leads him to question whether the government is hiding something from him... and from the rest of the world.",
-            "popularity": 654.6075,
-            "poster_path": "/yvirUYrva23IudARHn3mMGVxWqM.jpg",
-            "release_date": "2025-07-29",
-            "title": "War of the Worlds",
-            "video": false,
-            "vote_average": 4.316,
-            "vote_count": 482
-        },
         {
             "adult": false,
             "backdrop_path": "/1wi1hcbl6KYqARjdQ4qrBWZdiau.jpg",
@@ -37,8 +22,8 @@
             "release_date": "2025-07-30",
             "title": "The Naked Gun",
             "video": false,
-            "vote_average": 6.786,
-            "vote_count": 411
+            "vote_average": 6.788,
+            "vote_count": 410
         },
         {
             "adult": false,
@@ -56,27 +41,8 @@
             "release_date": "2025-08-13",
             "title": "Nobody 2",
             "video": false,
-            "vote_average": 7.266,
-            "vote_count": 250
-        },
-        {
-            "adult": false,
-            "backdrop_path": "/ZtcGMc204JsNqfjS9lU6udRgpo.jpg",
-            "genre_ids": [
-                28,
-                18
-            ],
-            "id": 911430,
-            "original_language": "en",
-            "original_title": "F1",
-            "overview": "Racing legend Sonny Hayes is coaxed out of retirement to lead a struggling Formula 1 team—and mentor a young hotshot driver—while chasing one more chance at glory.",
-            "popularity": 325.6567,
-            "poster_path": "/9PXZIUsSDh4alB80jheWX4fhZmy.jpg",
-            "release_date": "2025-06-25",
-            "title": "F1",
-            "video": false,
-            "vote_average": 7.812,
-            "vote_count": 1868
+            "vote_average": 7.256,
+            "vote_count": 248
         },
         {
             "adult": false,
@@ -95,46 +61,6 @@
             "video": false,
             "vote_average": 7.3,
             "vote_count": 54
-        },
-        {
-            "adult": false,
-            "backdrop_path": "/eU7IfdWq8KQy0oNd4kKXS0QUR08.jpg",
-            "genre_ids": [
-                878,
-                12,
-                28
-            ],
-            "id": 1061474,
-            "original_language": "en",
-            "original_title": "Superman",
-            "overview": "Superman, a journalist in Metropolis, embarks on a journey to reconcile his Kryptonian heritage with his human upbringing as Clark Kent.",
-            "popularity": 306.1502,
-            "poster_path": "/ombsmhYUqR4qqOLOxAyr5V8hbyv.jpg",
-            "release_date": "2025-07-09",
-            "title": "Superman",
-            "video": false,
-            "vote_average": 7.526,
-            "vote_count": 2925
-        },
-        {
-            "adult": false,
-            "backdrop_path": "/538U9snNc2fpnOmYXAPUh3zn31H.jpg",
-            "genre_ids": [
-                28,
-                12,
-                53
-            ],
-            "id": 575265,
-            "original_language": "en",
-            "original_title": "Mission: Impossible - The Final Reckoning",
-            "overview": "Ethan Hunt and team continue their search for the terrifying AI known as the Entity — which has infiltrated intelligence networks all over the globe — with the world's governments and a mysterious ghost from Hunt's past on their trail. Joined by new allies and armed with the means to shut the Entity down for good, Hunt is in a race against time to prevent the world as we know it from changing forever.",
-            "popularity": 249.4651,
-            "poster_path": "/z53D72EAOxGRqdr7KXXWp9dJiDe.jpg",
-            "release_date": "2025-05-17",
-            "title": "Mission: Impossible - The Final Reckoning",
-            "video": false,
-            "vote_average": 7.3,
-            "vote_count": 1591
         },
         {
             "adult": false,
@@ -215,44 +141,6 @@
             "video": false,
             "vote_average": 7.147,
             "vote_count": 361
-        },
-        {
-            "adult": false,
-            "backdrop_path": "/z8tNyAAnGk2d1XmO1L4i34UmP19.jpg",
-            "genre_ids": [
-                28,
-                53
-            ],
-            "id": 1367575,
-            "original_language": "en",
-            "original_title": "A Line of Fire",
-            "overview": "After working as a secret agent in the FBI for ten years, Jack 'Cash' Conry left it all behind after his wife passed in order to dedicate himself to his two daughters. Despite a fulfilling life at home, Cash misses the chance to make an impact and has been considering a return to the force. The decision is made for him when his old partner’s niece Jamie calls him for help, launching Cash right back into a world of danger, corruption and intrigue.",
-            "popularity": 244.9448,
-            "poster_path": "/jSG2mg1998DUAam6X9EA6SeJmqD.jpg",
-            "release_date": "2025-04-05",
-            "title": "A Line of Fire",
-            "video": false,
-            "vote_average": 6.273,
-            "vote_count": 22
-        },
-        {
-            "adult": false,
-            "backdrop_path": "/pHvHLrbvMogNMH1l7Uon3VzE3px.jpg",
-            "genre_ids": [
-                80,
-                28
-            ],
-            "id": 660033,
-            "original_language": "pl",
-            "original_title": "Jak zostałem gangsterem. Historia prawdziwa",
-            "overview": "The action of the film begins in the 1970s – even then, the young protagonist knows that adrenaline tastes better than powdered milk. Over time, he also discovers a desire for money, power, and being above the law. A transformation begins, and his gangster talent blossoms. Together with a friend, they build their own army.",
-            "popularity": 234.0184,
-            "poster_path": "/oEvk45mBpE6s6wmIjvCTbdaMMpB.jpg",
-            "release_date": "2019-12-25",
-            "title": "How I Became a Gangster",
-            "video": false,
-            "vote_average": 7.032,
-            "vote_count": 110
         },
         {
             "adult": false,
@@ -385,23 +273,143 @@
         },
         {
             "adult": false,
-            "backdrop_path": "/7RY5uiuM97FqS5qvPHG2XW2ZruY.jpg",
+            "backdrop_path": "/Q2OajDi2kcO6yErb1IAyVDTKMs.jpg",
             "genre_ids": [
+                27,
+                9648
+            ],
+            "id": 1078605,
+            "original_language": "en",
+            "original_title": "Weapons",
+            "overview": "When all but one child from the same class mysteriously vanish on the same night at exactly the same time, a community is left questioning who or what is behind their disappearance.",
+            "popularity": 125.1994,
+            "poster_path": "/cpf7vsRZ0MYRQcnLWteD5jK9ymT.jpg",
+            "release_date": "2025-08-04",
+            "title": "Weapons",
+            "video": false,
+            "vote_average": 7.5,
+            "vote_count": 758
+        },
+        {
+            "adult": false,
+            "backdrop_path": "/IOEXDwaVH2IcSXIZhCg7g572ic.jpg",
+            "genre_ids": [
+                27,
+                9648,
+                53
+            ],
+            "id": 926606,
+            "original_language": "en",
+            "original_title": "The Home",
+            "overview": "A troubled man starts working at a retirement home and realizes its residents and caretakers harbor sinister secrets. As he investigates the building and its forbidden fourth floor, he starts to uncover connections to his own past and upbringing as a foster child.",
+            "popularity": 127.3141,
+            "poster_path": "/qyGY1k5GqAORsVhfZA3gFKirZWD.jpg",
+            "release_date": "2025-07-24",
+            "title": "The Home",
+            "video": false,
+            "vote_average": 6.342,
+            "vote_count": 38
+        },
+        {
+            "adult": false,
+            "backdrop_path": "/ot2LoRyfp73Mswc9Y5KrDJYcyU1.jpg",
+            "genre_ids": [
+                28,
+                53,
                 18
             ],
-            "id": 1024592,
+            "id": 1119878,
             "original_language": "en",
-            "original_title": "God's Not Dead: In God We Trust",
-            "overview": "In a time of profound political, civil, and spiritual turmoil, Reverend David Hill grapples with the crucial question: Does God still have a place in politics? Compelled to enter a congressional race after the sudden death of a favored incumbent, David faces off against state senator Peter Kane, a formidable opponent determined to push religion out of the public square and cause greater divide.",
-            "popularity": 137.4501,
-            "poster_path": "/eb0KuIknUNKMunKTZQMn8hKyM7l.jpg",
-            "release_date": "2024-09-12",
-            "title": "God's Not Dead: In God We Trust",
+            "original_title": "Ice Road: Vengeance",
+            "overview": "Big rig ice road driver Mike McCann travels to Nepal to scatter his late brother’s ashes on Mt. Everest. While on a packed tour bus traversing the deadly 12,000 ft. terrain of the infamous Road to the Sky, McCann and his mountain guide encounter a group of mercenaries and must fight to save themselves, the busload of innocent travelers, and the local villagers’ homeland.",
+            "popularity": 155.6271,
+            "poster_path": "/cQN9rZj06rXMVkk76UF1DfBAico.jpg",
+            "release_date": "2025-06-27",
+            "title": "Ice Road: Vengeance",
             "video": false,
-            "vote_average": 4.8,
-            "vote_count": 14
+            "vote_average": 6.674,
+            "vote_count": 247
+        },
+        {
+            "adult": false,
+            "backdrop_path": "/4KN06gns94rQFoYQWDGunK7Cob4.jpg",
+            "genre_ids": [
+                35,
+                9648,
+                80
+            ],
+            "id": 744653,
+            "original_language": "en",
+            "original_title": "The Thursday Murder Club",
+            "overview": "A group of senior sleuths passionate about solving cold cases get plunged into a real-life murder mystery in this comic crime caper.",
+            "popularity": 116.9481,
+            "poster_path": "/u0o7XtI0WWdLzlK9hVT8lQTB6Yd.jpg",
+            "release_date": "2025-08-22",
+            "title": "The Thursday Murder Club",
+            "video": false,
+            "vote_average": 6.733,
+            "vote_count": 307
+        },
+        {
+            "adult": false,
+            "backdrop_path": "/dcLV5rEXuQRW0ZlB7IMLArHMyWh.jpg",
+            "genre_ids": [
+                35,
+                14,
+                10751
+            ],
+            "id": 1125257,
+            "original_language": "en",
+            "original_title": "Freakier Friday",
+            "overview": "Years after Tess and Anna endured an identity crisis, Anna now has a daughter of her own and a soon-to-be stepdaughter. As they navigate the myriad challenges that come when two families merge, Tess and Anna discover lightning might indeed strike twice.",
+            "popularity": 137.3601,
+            "poster_path": "/9wV65OmsjLAqBfDnYTkMPutXH8j.jpg",
+            "release_date": "2025-08-06",
+            "title": "Freakier Friday",
+            "video": false,
+            "vote_average": 6.877,
+            "vote_count": 158
+        },
+        {
+            "adult": false,
+            "backdrop_path": "/mOcMPfCJEvSREq8OZzg42gFgrGt.jpg",
+            "genre_ids": [
+                10749,
+                53
+            ],
+            "id": 1300116,
+            "original_language": "de",
+            "original_title": "Fall for Me",
+            "overview": "Lilli is suspicious of her sister's new fiance, but when an attractive stranger enters her life, she's suddenly distracted by the thralls of desire.",
+            "popularity": 104.7112,
+            "poster_path": "/nLTs9SNBuk3DuB8D0p3mSsPYN7J.jpg",
+            "release_date": "2025-08-20",
+            "title": "Fall for Me",
+            "video": false,
+            "vote_average": 6.114,
+            "vote_count": 88
+        },
+        {
+            "adult": false,
+            "backdrop_path": "/2SdwooNx8Ny8BfruWsbDBbaQpJT.jpg",
+            "genre_ids": [
+                53,
+                80,
+                18
+            ],
+            "id": 1242434,
+            "original_language": "en",
+            "original_title": "Highest 2 Lowest",
+            "overview": "When a titan music mogul, widely known as having the \"best ears in the business\", is targeted with a ransom plot, he is jammed up in a life-or-death moral dilemma.",
+            "popularity": 118.2203,
+            "poster_path": "/kOzwIr0R7WhaFgoYUZFLPZA2RBZ.jpg",
+            "release_date": "2025-08-14",
+            "title": "Highest 2 Lowest",
+            "video": false,
+            "vote_average": 6.4,
+            "vote_count": 52
         }
     ],
-    "total_pages": 52310,
-    "total_results": 1046200
+    "total_pages": 228,
+    "total_results": 4546
 }
