@@ -35,7 +35,7 @@ const toggleDropdown = () => {
       <img alt="logo" src={logo}  className=" w-auto   "
       /></div>
      {User && <div className="flex p-2 gap-4 justify-between items-center">
-        <div className="w-14 h-14 m-2  rounded-full bg-red-950 flex justify-center item-center cursor-pointer">
+        <div className="w-12 h-12 m-2  rounded-full bg-red-950 flex justify-center item-center cursor-pointer">
         <img
   alt="profile"
   src={User.photoURL || "./userProfile/1.png"}
