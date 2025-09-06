@@ -9,7 +9,7 @@ import SecondaryComponent from "./SecondaryComponent";
 import { addMovie, addPopularMovies, addTopratedMovies, addUpcomingMovies } from "../utils/redux/MovieSlice";
 
 const Browse = () => {
-  const moviesList = useSelector((state) => state.movies.initialState);
+  const moviesList = useSelector((state) => state.movies.NowplayingMovies);
   const popularMovies = useSelector((state) => state.movies.popularMovies);
   const TopratedMovies = useSelector((state) => state.movies.TopratedMovies);
   const UpcomingMovies = useSelector((state) => state.movies.UpcomingMovies);

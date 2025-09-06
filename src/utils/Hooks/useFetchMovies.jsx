@@ -17,7 +17,7 @@ const useFetchMovies = (url,storeadd) => {
     useEffect( ()=>{
     
       fetchnowplayingmovies();
-    },[]);
+    },[] );
 
 };
 

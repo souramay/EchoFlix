@@ -29,5 +29,5 @@ dist-ssr
 
 # firebase
 /.firebase/
-**/firebase.js
+
 

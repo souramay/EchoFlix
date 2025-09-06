@@ -1,17 +1,21 @@
 import { createSlice } from "@reduxjs/toolkit";
+import Mock_NowplayingMovies from "../mock_data/Mock_NowpalyingMovies.json"; 
+import Mock_popularMovies from "../mock_data/Mock_PopularMovies.json";
+// import Mock_TopratedMovies from "../mock_data/Mock_TopRated.json"; // Empty file, commented out
+import Mock_UpcomingMovies from "../mock_data/Mock_UpcomingMovies.json";
 
 export const MovieSlice = createSlice({
   name: "movies",
   initialState: {
-    initialState: [],
+    NowplayingMovies: Mock_NowplayingMovies?.results || [],
     videoId: null,
-    popularMovies: [],
+    popularMovies: Mock_popularMovies?.results || [],
     TopratedMovies: [],
-    UpcomingMovies: []
+    UpcomingMovies: Mock_UpcomingMovies?.results || []
   },
   reducers: {
     addMovie: (state, action) => {
-      state.initialState = action.payload;
+      state.NowplayingMovies = action.payload;
     },
     setVideoId: (state, action) => {
       state.videoId = action.payload;
@@ -28,6 +32,6 @@ export const MovieSlice = createSlice({
   },
 });
 
-export const { addMovie, setVideoId,addPopularMovies ,addTopratedMovies,addUpcomingMovies} = MovieSlice.actions;
+export const { addMovie, setVideoId, addPopularMovies, addTopratedMovies, addUpcomingMovies } = MovieSlice.actions;
 
 export default MovieSlice.reducer;
