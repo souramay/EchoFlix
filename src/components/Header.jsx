@@ -1,17 +1,25 @@
-import { useSelector } from "react-redux"
+import { useDispatch, useSelector } from "react-redux"
 import { logo } from "../utils/constants/ImgConst"
 import { signOut } from "firebase/auth";
 
 
-import { useState } from "react";
-import { FiChevronDown } from "react-icons/fi";
+import { useEffect, useState } from "react";
+import { FiChevronDown, FiSearch } from "react-icons/fi";
 import { auth } from "../utils/constants/GetAuthfirebase";
+import { setSearchClicked } from "../utils/redux/GptSlice";
+import { useLocation, useNavigate } from "react-router-dom";
 
 
 const Header = () => {
 
   // hooks
 const User =useSelector((state) => state.user);
+const searchClicked = useSelector((state) => state.gpt.SearchClicked);
+const navigate=useNavigate();
+const locate=useLocation();
+
+
+const dispatch =useDispatch();
 
 const [showDropdown, setShowDropdown] = useState(false);
 
@@ -29,12 +37,34 @@ const toggleDropdown = () => {
   setShowDropdown(!showDropdown);
 };
 
+const handleSearchClick = () => {
+  dispatch(setSearchClicked());
+  navigate("/search");
+ 
+
+};
+useEffect(()=>{
+  if(locate.pathname ==="/browse"){
+  dispatch(setSearchClicked());
+
+  
+}},[locate.pathname,dispatch]);
+
+
+
   return (
     <div className="flex justify-between items-center z-20 relative -mt-4 ">
       <div className="w-36 mx-4 cursor-pointer">
       <img alt="logo" src={logo}  className=" w-auto   "
       /></div>
      {User && <div className="flex p-2 gap-4 justify-between items-center">
+        {!searchClicked && (<button
+  onClick={handleSearchClick}
+  className="relative text-white text-sm bg-gray-800 rounded-full w-40 cursor-pointer p-2 m-1 h-10 opacity-70 pl-10"
+>
+  <FiSearch className="w-5 h-5 absolute left-3 top-1/2 -translate-y-1/2" />
+  <span className="block w-full text-center">GPT Search</span>
+</button>)}
         <div className="w-12 h-12 m-2  rounded-full bg-red-950 flex justify-center item-center cursor-pointer">
         <img
   alt="profile"

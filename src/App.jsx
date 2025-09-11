@@ -1,23 +1,26 @@
 import React, { useEffect } from "react";
-import AppRoutes from "./components/AppRoutes";
+
 import {  useDispatch } from "react-redux";
 
 import { onAuthStateChanged } from "firebase/auth";
 import { addUser, removeUser } from "./utils/redux/AuthSlice";
-import { useNavigate } from "react-router-dom";
+import { Outlet, useLocation, useNavigate } from "react-router-dom";
 import { auth } from "./utils/constants/GetAuthfirebase";
 
 function App() {
   
    const dispatch = useDispatch();
   const navigate=useNavigate();
+  const location=useLocation();
 
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, (user) => {
       if (user) {
         const { uid, email, displayName, photoURL } = user;
         dispatch(addUser({ uid, email, displayName, photoURL }));
+        if(location.pathname==="/"){
         navigate("/browse");
+        }
       } else {
         dispatch(removeUser());
         navigate("/");
@@ -32,7 +35,7 @@ function App() {
   return (
     
      
-      <AppRoutes />
+      <Outlet />
    
   );
 }
