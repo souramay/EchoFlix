@@ -1,4 +1,4 @@
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import Header from "./Header";
 import MovieRecent from "./MovieRecent";
 import VideoBack from "./VideoBack";
@@ -7,12 +7,15 @@ import { useEffect, useState } from "react";
 import { NowPlayingurl, popular, Toprated, Upcoming } from "../utils/constants/ImgConst";
 import SecondaryComponent from "./SecondaryComponent";
 import { addMovie, addPopularMovies, addTopratedMovies, addUpcomingMovies } from "../utils/redux/MovieSlice";
+import { clearGpt } from "../utils/redux/GptSlice";
 
 const Browse = () => {
   const moviesList = useSelector((state) => state.movies.NowplayingMovies);
   const popularMovies = useSelector((state) => state.movies.popularMovies);
   const TopratedMovies = useSelector((state) => state.movies.TopratedMovies);
   const UpcomingMovies = useSelector((state) => state.movies.UpcomingMovies);
+
+  const dispatch=useDispatch();
 
   useFetchMovies(NowPlayingurl, addMovie);
   useFetchMovies(popular, addPopularMovies);
@@ -26,6 +29,7 @@ const Browse = () => {
       const randomMovie = moviesList[Math.floor(Math.random() * moviesList.length)];
       setMovie(randomMovie);
     }
+    dispatch(clearGpt());
   }, [moviesList, movie]);
 
   return (

@@ -1,44 +1,102 @@
-import { useRef } from "react"
+import { useEffect, useRef, useState } from "react"
 import Header from "./Header"
 import Aisearch from "../utils/Hooks/Aisearch";
-import { useDispatch} from "react-redux";
-import { setMovies } from "../utils/redux/GptSlice";
+import { useDispatch, useSelector} from "react-redux";
+import {  setMovies, setMovieSearch } from "../utils/redux/GptSlice";
+import { FiSearch } from "react-icons/fi"; // added
+import { AiOutlineLoading3Quarters } from "react-icons/ai";
+import useFetchMovieName from "../utils/Hooks/useFetchMovieName";
+import SecondaryComponent from "./SecondaryComponent";
+import Searchmoviecard from "./Searchmoviecard";
 
-const Search = () => {
+
+
+
+const Search =  () => {
   const input = useRef();
   const dispatch = useDispatch();
+  const Name=useSelector((state)=>state.gpt.Movies);
+  const movieSearch=useSelector((state)=>state.gpt.MovieSearch);
+  const [loading, setLoading] = useState(false);
+
+
 
 
   const handleSearch = async () => {
-    const search = await Aisearch(input.current.value);
-    if (search?.length) {
-      dispatch(setMovies(search));
+    try {
+      setLoading(true);
+      const search = await Aisearch(input.current.value);
+    
+      if (search?.length) {
+        dispatch(setMovies(search));
+      
+      }
+    } finally {
+      setLoading(false);
     }
+  
+    
   };
 
   const handleKeyDown = (e) => e.key === "Enter" && handleSearch();
+  
+  useEffect(() => {
+    const data = async () => {
+      const promises = Name.map(item => useFetchMovieName(item));
+      const result = await Promise.all(promises);
+      dispatch(setMovieSearch(result));
+    };
+    data();
+  }, [Name]);
+  
+
+ 
+  
+
+
 
   return (
-    <div className="w-full h-screen bg-black text-white">
+    <div className="min-h-screen w-full text-white bg-gradient-to-br from-black via-gray-950 to-gray-900 overflow-x-hidden">
       <Header/>
       <div className="max-w-2xl mx-auto px-4 mt-8">
-        <input
-          ref={input}
-          onKeyDown={handleKeyDown}
-          className="w-full bg-transparent border-b-2 border-gray-600 px-3 py-2 focus:outline-none focus:border-white"
-          placeholder="Type a movie name, recommendation, anything..."
+        <div className="relative">
+          <input
+            ref={input}
+            onKeyDown={(e) => e.key === "Enter" && handleSearch()}
+            className="w-full bg-transparent border-b-2 border-gray-600 px-3 pr-10 py-2 focus:outline-none focus:border-white"
+            placeholder="Type a movie name, recommendation, anything..."
+          />
+          {loading ? (
+        <AiOutlineLoading3Quarters
+          size={22}
+          className="absolute right-3 top-1/2 -translate-y-1/2 text-gray-400 animate-spin"
+          aria-label="Loading"
         />
-        <div className="flex gap-2 mt-4">
-          <button className="bg-blue-600 hover:bg-blue-700 text-white font-semibold py-2 px-4 rounded" onClick={handleSearch}>
-            Search
-          </button>
-          
+      ) : (
+        <FiSearch
+          size={22}
+          className="absolute right-3 top-1/2 -translate-y-1/2 text-gray-400 hover:text-white cursor-pointer"
+          onClick={handleSearch}
+          role="button"
+          aria-label="Search"
+          tabIndex={0}
+          onKeyDown={(e) => (e.key === "Enter" || e.key === " ") && handleSearch()}
+        />
+      )}
+        </div>
+        </div>
+        <div className="max-w-7xl w-full mx-auto md:flex md:justify-start lg:justify-center">
+          {movieSearch && movieSearch.length > 0 ? (
+            <div className="mt-8 space-y-6  ">
+              <Searchmoviecard/>
+            </div>
+          ) : null}
         </div>
 
-       
-      </div>
+        
+      
     </div>
-  )
+  );
 }
 
 export default Search

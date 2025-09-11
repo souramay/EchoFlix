@@ -36,7 +36,7 @@ User query: ${input}
   const movieNames = response.text.split(',').map(s => s.trim());
   
  
-  console.log(movieNames);
+  // console.log(movieNames);
 
  
 
