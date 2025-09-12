@@ -3,8 +3,9 @@ import { useDispatch } from "react-redux";
 import options from "../constants/constantMovie";
 
 
-const useFetchMovies = (url,storeadd) => {
+const useFetchMovies = (url,storeadd,movie) => {
     const dispatch =useDispatch();
+    
     
       const fetchnowplayingmovies=async()=>{
         
@@ -16,7 +17,7 @@ const useFetchMovies = (url,storeadd) => {
     
     useEffect( ()=>{
     
-      fetchnowplayingmovies();
+      movie<=0 && fetchnowplayingmovies();
     },[] );
 
 };

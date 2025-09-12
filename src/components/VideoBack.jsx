@@ -4,10 +4,12 @@ import { useEffect, useState } from "react";
 import {  movieImageUrlforbackground } from "../utils/constants/ImgConst";
 
 const VideoBack = ({ movieId, movieImg }) => {
-  useFetchVideo(movieId);
+  
 
   const videos = useSelector((state) => state.movies.videoId) || [];
   const [videoplay, setVideoplay] = useState(null);
+
+  useFetchVideo(movieId,videos);
 
   // Filter for trailer videos
   const trailerVideos = videos.filter((video) => video.type === "Trailer");

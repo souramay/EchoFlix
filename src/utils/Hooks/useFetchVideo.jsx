@@ -1,4 +1,4 @@
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch} from "react-redux";
 import { setVideoId } from "../redux/MovieSlice";
 import { useEffect } from "react";
 import options from "../constants/constantMovie";
@@ -7,7 +7,7 @@ import { firstpartVideoUrl } from "../constants/ImgConst";
 
 
 
-const useFetchVideo = (movieId) => {
+const useFetchVideo = (movieId,videos) => {
     const dispatch =useDispatch();
 
     
@@ -25,7 +25,7 @@ const useFetchVideo = (movieId) => {
       }
 
     useEffect(() => {
-      fetchVideo();
+      videos && fetchVideo();
     }, []);
   
 }
