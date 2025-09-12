@@ -55,49 +55,44 @@ useEffect(()=>{
   return (
     <div className="flex justify-between items-center z-20 relative -mt-4 ">
       <div className="w-36 mx-4 cursor-pointer">
-      <img alt="logo" src={logo}  className=" w-auto   "
-      /></div>
-     {User && <div className="flex p-2 gap-4 justify-between items-center">
-        {!searchClicked && (<button
-  onClick={handleSearchClick}
-  className="relative text-white text-sm bg-gray-800 rounded-full w-40 cursor-pointer p-2 m-1 h-10 opacity-70 pl-10"
->
-  <FiSearch className="w-5 h-5 absolute left-3 top-1/2 -translate-y-1/2" />
-  <span className="block w-full text-center">GPT Search</span>
-</button>)}
-        <div className="w-12 h-12 m-2  rounded-full bg-red-950 flex justify-center item-center cursor-pointer">
-        <img
-  alt="profile"
-  src={User.photoURL || "./userProfile/1.png"}
-  className="w-full h-full object-cover item-center  m-full rounded-full "
-/>
-</div>
-      <p className="font-bold text-white text-lg cursor-pointer">{User.displayName}</p>
+        <img alt="logo" src={logo} className="w-auto" />
+      </div>
 
-      <button
+      {User && (
+        <div className="ml-auto mr-2 sm:mr-4 flex items-center gap-1 sm:gap-3 md:gap-4 min-w-0">
+          {!searchClicked && (
+            <button
+              onClick={handleSearchClick}
+              aria-label="GPT Search"
+              className="relative text-white text-sm rounded-full h-10 w-10 sm:w-40 px-0 sm:pl-10 sm:pr-3 flex items-center justify-center bg-transparent sm:bg-gray-800 sm:hover:bg-gray-700 mr-0 sm:mr-3"
+            >
+              <FiSearch className="w-5 h-5 sm:w-4 sm:h-4 md:w-5 md:h-5" />
+              <span className="hidden sm:block w-full text-center ml-2">GPT Search</span>
+            </button>
+          )}
+          <span className="text-white font-semibold text-xs sm:text-sm md:text-base truncate max-w-[8rem] md:max-w-[14rem] mr-1">
+            {User.displayName ?? "User"}
+          </span>
+          <img
+            src={User?.photoURL}
+            alt="Profile"
+            className="h-7 w-7 sm:h-10 sm:w-10 md:h-12 md:w-12 lg:h-14 lg:w-14 rounded-full object-cover ring-2 ring-gray-800 bg-gray-900 bg-gradient-to-br from-red-900 shrink-0"
+          />
+          <button
             onClick={toggleDropdown}
-            className="bg-transparent border-none cursor-pointer flex items-center"
-            style={{ outline: "none" }}
+            className="bg-transparent border-none cursor-pointer flex items-center focus:outline-none ml-1 sm:ml-0"
           >
             <FiChevronDown
-  className={`w-6   h-6 transition-transform duration-200 mr-9 text-white font-bold  ${showDropdown ? "-rotate-180" : ""}`}
-  // color prop can be omitted if using Tailwind
-/>
+              className={`w-5 h-5 sm:w-6 sm:h-6 text-white transition-transform duration-200 ${showDropdown ? "-rotate-180" : ""} mr-1 sm:mr-3`}
+            />
           </button>
-      
-      {showDropdown && (
-        <ul className="absolute  cursor-pointer right-0 mt-21 mr-7 bg-[#B71C1C]   rounded-lg hover:scale-105 ">
-            <li
-  onClick={HandleSignOut}
-  className="text-white p-2 font-sans font-bold"
->
-  Logout
-</li>
+          {showDropdown && (
+            <ul className="absolute right-2 top-24 bg-[#B71C1C] rounded-lg cursor-pointer">
+              <li onClick={HandleSignOut} className="text-white p-2 font-sans font-bold">Logout</li>
             </ul>
           )}
-
-      </div>}
-      
+        </div>
+      )}
     </div>
   )
 }
