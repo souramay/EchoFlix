@@ -7,7 +7,7 @@ import { firstpartVideoUrl } from "../constants/ImgConst";
 
 
 
-const useFetchVideo = (movieId,videos) => {
+const useFetchVideo = (movieId,slice) => {
     const dispatch =useDispatch();
 
     
@@ -19,13 +19,13 @@ const useFetchVideo = (movieId,videos) => {
         
         const response = await fetch(url,options);
         const videoData = await response.json();
-        dispatch(setVideoId(videoData.results));
+        dispatch(slice(videoData.results));
         
         // console.log(videoData);
       }
 
     useEffect(() => {
-      videos && fetchVideo();
+      fetchVideo();
     }, []);
   
 }

@@ -4,11 +4,14 @@ import { setFilterMovies } from "../utils/redux/GptSlice";
 import SecondaryComponent from "./SecondaryComponent";
 import Moviecard from "./Moviecard";
 import SearchSecondarycomponents from "./SearchSecondarycomponent";
+import { setVideo } from "../utils/redux/DetailMovieSlice";
+import { useNavigate } from "react-router-dom";
 
 const Searchmoviecard = () => {
   const dispatch = useDispatch();
   const movieSearch = useSelector((state) => state.gpt.MovieSearch); // array of TMDB responses
   const movies = useSelector((state) => state.gpt.Movies);           // array of query names
+  const navigate=useNavigate();
 
   const filteredMovies = (Array.isArray(movieSearch) ? movieSearch : [])
     .map((resp, index) => {
@@ -22,6 +25,10 @@ const Searchmoviecard = () => {
     })
     .filter(Boolean);
     // console.log(filteredMovies);
+const handleClick = (id) => {
+  dispatch(setVideo(id));
+  navigate(`/detail/${id}`); // Pass the movie ID in the URL
+};
 
 
 
@@ -45,6 +52,7 @@ const Searchmoviecard = () => {
           <div
             key={movie.id}
             className="flex-none w-28 sm:w-20 md:w-32 md:h-auto lg:w-64 snap-start md:mx-9 lg:-mr-25"
+            onClick={() => handleClick(movie.id)}
           >
             <Moviecard img={movie.poster_path} />
           </div>

@@ -10,6 +10,7 @@ import Browse from "./components/Browse";
 import "./index.css";
 import ErrorPage from "./components/ErrorPage";
 import Search from "./components/Search";
+import MovieDetail from "./components/MovieDetail";
 
 const router = createBrowserRouter([
   {
@@ -20,6 +21,7 @@ const router = createBrowserRouter([
       { index: true, element: <Login /> },
       { path: "browse", element: <Browse /> },
       { path: "search", element:<Search/>  },
+      { path: "detail/:movieId", element:<MovieDetail/>  },
     ],
   },
 ]);

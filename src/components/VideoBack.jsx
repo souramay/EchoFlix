@@ -1,15 +1,17 @@
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import useFetchVideo from "../utils/Hooks/useFetchVideo";
 import { useEffect, useState } from "react";
 import {  movieImageUrlforbackground } from "../utils/constants/ImgConst";
+import { setVideoId } from "../utils/redux/MovieSlice";
 
 const VideoBack = ({ movieId, movieImg }) => {
+  const dispatch=useDispatch();
   
 
   const videos = useSelector((state) => state.movies.videoId) || [];
   const [videoplay, setVideoplay] = useState(null);
 
-  useFetchVideo(movieId,videos);
+  useFetchVideo(movieId,setVideoId);
 
   // Filter for trailer videos
   const trailerVideos = videos.filter((video) => video.type === "Trailer");
