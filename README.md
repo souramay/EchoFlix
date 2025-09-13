@@ -2,6 +2,10 @@
 
 EchoFlix is a modern movie browsing and recommendation web app built with React. It features movie details, trailers, cast info, reviews, gallery, and smart search powered by GPT.
 
+## Live Demo
+
+Visit the app: [https://echo-flix.web.app/](https://echo-flix.web.app/)
+
 ## Features
 
 - Browse trending and recent movies
@@ -46,7 +50,7 @@ src/
    ```
 
 3. **Set up Firebase:**
-   - Add your Firebase config to `src/utils/constants/GetAuthfirebase.js`.
+   - Add your Firebase config to the appropriate file in `src\utils\firebase.js`.
 
 4. **Start the development server:**
    ```
