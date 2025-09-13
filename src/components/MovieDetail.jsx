@@ -89,7 +89,7 @@ const MovieDetail = () => {
           <div>
             <button
               className="flex items-center gap-2 cursor-pointer text-white px-3 py-2 rounded hover:bg-gray-800 mt-2 ml-0 md:-mt-3 md:text-lg"
-              onClick={() => navigate("/browse")}
+              onClick={() => navigate(-1)} // <-- changed here
             >
               <FaChevronLeft />
               Back
