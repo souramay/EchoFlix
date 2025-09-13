@@ -127,7 +127,7 @@ const MovieDetail = () => {
                 </div>
                 <div className="flex mt-8 justify-center gap-3 text-gray-400 text-[11px] flex-wrap">
                   <p
-                    className={`cursor-pointer pb-1 ${
+                    className={`cursor-pointer md:text-xl pb-1 ${
                       overviews ? "border-b-2 border-gray-400" : ""
                     }`}
                     onClick={() => {
@@ -142,7 +142,7 @@ const MovieDetail = () => {
                     overviews
                   </p>
                   <p
-                    className={`pb-1 cursor-pointer ${
+                    className={`pb-1 cursor-pointer md:text-xl ${
                       clip ? "border-b-2 border-gray-400" : ""
                     }`}
                     onClick={() => {
@@ -157,7 +157,7 @@ const MovieDetail = () => {
                     Clips and Trailers
                   </p>
                   <p
-                    className={`cursor-pointer pb-1 ${
+                    className={`cursor-pointer  pb-1 md:text-xl ${
                       caste ? "border-b-2 border-gray-400" : ""
                     }`}
                     onClick={() => {
@@ -172,7 +172,7 @@ const MovieDetail = () => {
                     Caste
                   </p>
                   <p
-                    className={`cursor-pointer pb-1 ${
+                    className={`cursor-pointer md:text-xl pb-1 ${
                       reviews ? "border-b-2 border-gray-400" : ""
                     }`}
                     onClick={() => {
@@ -187,7 +187,7 @@ const MovieDetail = () => {
                     Reviews
                   </p>
                   <p
-                    className={`cursor-pointer pb-1 ${
+                    className={`cursor-pointer md:text-xl pb-1 ${
                       gallery ? "border-b-2 border-gray-400" : ""
                     }`}
                     onClick={() => {
@@ -202,7 +202,7 @@ const MovieDetail = () => {
                     Gallery
                   </p>
                   <p
-                    className={`cursor-pointer pb-1 ${
+                    className={`cursor-pointer md:text-xl pb-1 ${
                       similarRecommended ? "border-b-2 border-gray-400" : ""
                     }`}
                     onClick={() => {
@@ -220,7 +220,7 @@ const MovieDetail = () => {
                 <div>
                   {overviews && (
                     <div className="flex justify-center w-full">
-                      <div className="p-4 px-2 w-full max-w-2xl lg:max-w-6xl font-serif my-3 text-gray-200 mx-auto box-border overflow-x-auto max-w-full">
+                      <div className="p-4 px-2 w-full  lg:max-w-6xl font-serif my-3 text-gray-200 mx-auto box-border overflow-x-auto max-w-full">
                         <Overview movieId={movieId} />
                       </div>
                     </div>

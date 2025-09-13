@@ -57,14 +57,15 @@ const Search =  () => {
   return (
     <div className="min-h-screen w-full text-white bg-gradient-to-br from-black via-gray-950 to-gray-900 overflow-x-hidden">
       <Header/>
-      <div className="max-w-2xl mx-auto px-4 mt-8">
-        <button
-          className="flex items-center gap-2 cursor-pointer text-white px-3 py-2 rounded hover:bg-gray-800 mt-2 ml-0 md:-mt-3 md:text-lg"
+      <button
+          className="flex items-center gap-2 cursor-pointer text-white px-3 py-2 rounded hover:bg-gray-800 mt-2 ml-5 md:-mt-3 md:text-lg "
           onClick={() => navigate("/browse")}
         >
           <FaChevronLeft />
           Back
         </button>
+      <div className="max-w-2xl mx-auto px-4 mt-8">
+        
         <div className="relative mt-4">
           <input
             ref={input}

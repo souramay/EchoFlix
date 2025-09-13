@@ -5,9 +5,10 @@ import { signOut } from "firebase/auth";
 
 import { useEffect, useState } from "react";
 import { FiChevronDown, FiSearch } from "react-icons/fi";
-import { auth } from "../utils/constants/GetAuthfirebase";
+
 import { setSearchClicked } from "../utils/redux/GptSlice";
 import { useLocation, useNavigate } from "react-router-dom";
+import { auth } from "../utils/firebase";
 
 
 const Header = () => {

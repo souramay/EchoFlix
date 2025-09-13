@@ -3,7 +3,8 @@ import { useDispatch } from "react-redux";
 import { addUser } from "../redux/AuthSlice";
 
 import RandomUserPic from "../RandomUserPic";
-import { auth } from "../constants/GetAuthfirebase";
+import { auth } from "../firebase";
+
 
 const useAuth = () => {
   const dispatch = useDispatch();

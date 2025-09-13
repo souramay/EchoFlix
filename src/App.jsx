@@ -5,7 +5,9 @@ import {  useDispatch } from "react-redux";
 import { onAuthStateChanged } from "firebase/auth";
 import { addUser, removeUser } from "./utils/redux/AuthSlice";
 import { Outlet, useLocation, useNavigate } from "react-router-dom";
-import { auth } from "./utils/constants/GetAuthfirebase";
+
+import Footer from "./components/Footer";
+import { auth } from "./utils/firebase";
 
 function App() {
   
@@ -33,10 +35,10 @@ function App() {
   
 
   return (
-    
-     
+    <>
       <Outlet />
-   
+      <Footer/>
+    </>
   );
 }
 

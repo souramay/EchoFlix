@@ -9,7 +9,6 @@ const VIDEO_TYPES = [
     "Clip",
     "Featurette",
     "Behind the Scenes",
-    "Song",
     "Music"
 ];
 
@@ -27,15 +26,19 @@ const Clips = ({ playerRef }) => {
 
     const filteredVideos = filter === "All"
         ? videos
-        : videos.filter(video =>
-            video.type.toLowerCase().includes(filter.toLowerCase())
-        );
+        : filter === "Music"
+            ? videos.filter(video =>
+                ["song", "music"].includes(video.type.toLowerCase())
+            )
+            : videos.filter(video =>
+                video.type.toLowerCase().includes(filter.toLowerCase())
+            );
 
     return (
-        <div className="w-full bg-black">
+        <div className="sm:w-auto w-screen bg-black">
             <div className="w-full bg-black overflow-x-auto">
                 {/* Filter Bar */}
-                <div className="flex gap-2 justify-center py-4 border-b border-neutral-800 bg-black sticky top-0 z-10 overflow-x-auto whitespace-nowrap px-2 scrollbar-hide">
+                <div className="flex gap-2 justify-center py-4 border-b border-neutral-800 bg-black sticky top-0 z-10 overflow-x-auto whitespace-nowrap  px-2 scrollbar-hide">
                     {VIDEO_TYPES.map(type => (
                         <button
                             key={type}
@@ -68,14 +71,14 @@ const Clips = ({ playerRef }) => {
                                 alt={video.name}
                                 className="w-full sm:w-[120px] h-[100px] sm:h-full object-cover bg-neutral-800 border-r border-neutral-800 rounded-t-xl sm:rounded-l-xl sm:rounded-t-none shadow"
                             />
-                            <div className="p-3 sm:p-4 flex-1 flex flex-col justify-center min-h-[80px] w-full">
-                                <h4 className="mb-1 sm:mb-2 text-sm sm:text-base font-bold text-white tracking-wide truncate overflow-hidden w-full">
+                            <div className="p-3 sm:p-4 pl-6 sm:pl-8 flex-1 flex flex-col justify-center min-h-[80px] w-full">
+                                <h4 className="mb-1 sm:mb-2 text-xs sm:text-sm font-bold text-white tracking-wide truncate overflow-hidden w-full">
                                     {video.name}
                                 </h4>
-                                <p className="mb-1 sm:mb-2 text-xs sm:text-sm text-neutral-300 truncate overflow-hidden w-full">
+                                <p className="mb-1 sm:mb-2 text-[10px] sm:text-xs text-neutral-300 truncate overflow-hidden w-full">
                                     <span className="font-semibold">{video.type}</span> &nbsp;•&nbsp; {new Date(video.published_at).toLocaleDateString()}
                                 </p>
-                                <p className="text-xs sm:text-sm text-neutral-400 truncate overflow-hidden w-full">
+                                <p className="text-[10px] sm:text-xs text-neutral-400 truncate overflow-hidden w-full">
                                     Official: <span className={video.official ? "text-green-500 font-bold" : "text-red-500 font-bold"}>
                                         {video.official ? "Yes" : "No"}
                                     </span>

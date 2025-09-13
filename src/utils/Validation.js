@@ -15,7 +15,7 @@ export const ValidateDetails=(email,password,name)=>{
         return "Invalid Email"
     }
     if(!Password){
-        return "Invalid Password"
+        return "Password must be at least 8 characters and include an uppercase letter and a digit."
     }
     return null
 }

@@ -1,6 +1,6 @@
 import { useRef, useState } from "react"
 
-import Header from "./header"
+import Header from "./Header"
 import { ValidateDetails } from "../utils/validation";
 import useAuth from "../utils/Hooks/useAuth";
 import { backgroundImg } from "../utils/constants/ImgConst";
@@ -54,18 +54,23 @@ const Login = () => {
   };
 
   return (
-    <div className="bg-gradient-to-b from-black ">
-      <div className="absolute bg-gradient-to-b from-black w-full z-10">
-      <Header />
+    <div
+      className="min-h-screen flex flex-col bg-gradient-to-b from-black relative"
+      style={{
+        backgroundImage: `url(${backgroundImg})`,
+        backgroundSize: "cover",
+        backgroundPosition: "center",
+        backgroundRepeat: "no-repeat",
+      }}
+    >
+      <div className="bg-gradient-to-b from-black  w-full z-10">
+        <div>
+        <Header />
       </div>
-      <div className="">
-        <img alt="logo" src={backgroundImg} className="absolute -z-10 w-full h-screen object-cover " />
-      </div>
-      <div className="flex justify-center  ">
-       
-        <form className="text-white bg-black px-12 py-10 w-full max-w-md mx-auto mt-38 opacity-85 rounded-lg" onSubmit={(e)=>{e.preventDefault()}}>
+      <div className="flex-1 flex flex-col items-center relative ">
+        <form className="text-white bg-black px-12 py-10 w-full max-w-md mx-auto opacity-85 rounded-lg relative z-10 mt-13" onSubmit={(e)=>{e.preventDefault()}}>
 
-          <h1 className="text-3xl py-2 my-2">{!IsSignin?"Sign Up" : "Sign In"}</h1>
+          <h1 className="text-3xl py-2 mb-2 mt-0">{!IsSignin ? "Sign Up" : "Sign In"}</h1>
          
          {!IsSignin && (<input ref={name} type="text" placeholder="Full Name" className="p-4 my-4 bg-gray-900 w-full rounded-sm"/>)}
 
@@ -77,7 +82,7 @@ const Login = () => {
 
           <button className="bg-red-600 w-full p-3 my-4 rounded-lg font-bold hover:bg-red-700 "
             onClick={HandleClick}
-          >{!IsSignin?"Sign Up" : "Sign In"}</button>
+          >{!IsSignin ? "Sign Up" : "Sign In"}</button>
           
           <ul className="flex">
             <li className="my-4 p-1 text-gray-400 opacity-90">{!IsSignin?"New to EchoFlix?" : "Already have an account?"}</li>
@@ -86,6 +91,7 @@ const Login = () => {
 
           
         </form>
+      </div>
       </div>
       
 

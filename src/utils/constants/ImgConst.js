@@ -2,6 +2,7 @@
 export const logo = "/img/logo/logo2.png";
 export const backgroundImg = "/img/Background/Background2.jpg";
 export const logoTab = "/img/logo/logo-tab2.png";
+export const footerImg="/userProfile/Admin/Adobe Express - file.png"
 
 
 
