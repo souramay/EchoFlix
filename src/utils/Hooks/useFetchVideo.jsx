@@ -1,5 +1,4 @@
 import { useDispatch} from "react-redux";
-import { setVideoId } from "../redux/MovieSlice";
 import { useEffect } from "react";
 import options from "../constants/constantMovie";
 import { firstpartVideoUrl } from "../constants/ImgConst";

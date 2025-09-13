@@ -3,11 +3,14 @@ import { createSlice } from "@reduxjs/toolkit";
 
 
 export const DetailMovieSlice=createSlice({
-    name:"detail",
+    name:"details",
     initialState:{
         detail:null,
         video:null,
         trailer:null,
+        videoplay:null,
+        videodetails:[],
+        caste:null,
     },
     reducers:{
         setDetail:(state,action)=>{
@@ -18,10 +21,19 @@ export const DetailMovieSlice=createSlice({
         },
         setTrailer:(state,action)=>{
             state.trailer=action.payload;
+        },
+        setVideoplay:(state,action)=>{
+            state.videoplay=action.payload;
+        },
+        setVideodetails:(state,action)=>{
+            state.videodetails=action.payload;
+        },
+        setCaste:(state,action)=>{
+            state.caste=action.payload;
         }
         
     }
 })
 
-export const { setDetail,setVideo,setTrailer} = DetailMovieSlice.actions;
+export const { setDetail,setVideo,setTrailer,setVideoplay,setVideodetails,setCaste} = DetailMovieSlice.actions;
 export default DetailMovieSlice.reducer;
