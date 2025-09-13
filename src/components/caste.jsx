@@ -1,8 +1,8 @@
 import { useSelector } from "react-redux";
 import useFetchCaste from "../utils/Hooks/usefetchcaste";
-import { useEffect } from "react";
+import { IMAGE_BASE } from "../utils/constants/ImgConst";
 
-const IMAGE_BASE = "https://image.tmdb.org/t/p/w185";
+
 
 const Caste = ({ movieId }) => {
   useFetchCaste(movieId);

@@ -1,6 +1,17 @@
 import { FaStar, FaFire, FaPlay, FaInfoCircle } from "react-icons/fa";
+import { useNavigate } from "react-router-dom";
+import { useDispatch } from "react-redux";
+import { setVideo } from "../utils/redux/DetailMovieSlice";
 
-const MovieRecent = ({ title, overview, vote, popularity, release }) => {
+const MovieRecent = ({ title, overview, vote, popularity, release, id, videoKey }) => {
+  const navigate = useNavigate();
+  const dispatch = useDispatch();
+
+  const handlePlayClick = () => {
+    dispatch(setVideo(id));
+    navigate(`/detail/${id}`);
+  };
+
   return (
     <div className="relative w-full h-full z-0 mt-64">
       <div className="text-white p-2 md:p-6 sm:p-4 mx-2 md:ml-8 sm:ml-4">
@@ -22,11 +33,22 @@ const MovieRecent = ({ title, overview, vote, popularity, release }) => {
               <p className="opacity-60 text-xs sm:text-sm md:text-base lg:text-lg line-clamp-3">{overview}</p>
             </div>
             <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 md:gap-6 items-start sm:items-center mt-4 sm:mt-6">
-              <button className="cursor-pointer flex justify-center items-center w-full sm:w-36 md:w-40 lg:w-44 bg-white text-black px-4 sm:px-5 md:px-6 py-2 sm:py-2.5 rounded hover:opacity-80 text-sm sm:text-base whitespace-nowrap">
+              <button
+                className="cursor-pointer flex justify-center items-center w-full sm:w-36 md:w-40 lg:w-44 bg-white text-black px-4 sm:px-5 md:px-6 py-2 sm:py-2.5 rounded hover:opacity-80 text-sm sm:text-base whitespace-nowrap"
+                onClick={handlePlayClick}
+                disabled={!id}
+                title={!id ? "No details available" : ""}
+              >
                 <FaPlay className="w-4 h-4 sm:w-5 sm:h-5 mr-2" />
                 Play
               </button>
-              <button className=" cursor-pointer flex justify-center items-center w-full sm:w-36 md:w-40 lg:w-44 bg-gray-700 opacity-85 text-white px-4 sm:px-5 md:px-6 py-2 sm:py-2.5 rounded hover:bg-gray-600 text-sm sm:text-base whitespace-nowrap">
+              <button
+                className="cursor-pointer flex justify-center items-center w-full sm:w-36 md:w-40 lg:w-44 bg-gray-700 opacity-85 text-white px-4 sm:px-5 md:px-6 py-2 sm:py-2.5 rounded hover:bg-gray-600 text-sm sm:text-base whitespace-nowrap"
+                onClick={() => {
+                  dispatch(setVideo(id));
+                  navigate(`/detail/${id}`);
+                }}
+              >
                 <FaInfoCircle className="w-4 h-4 sm:w-5 sm:h-5 mr-2" />
                 More Info
               </button>

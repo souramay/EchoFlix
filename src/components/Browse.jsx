@@ -3,7 +3,7 @@ import Header from "./Header";
 import MovieRecent from "./MovieRecent";
 import VideoBack from "./VideoBack";
 import useFetchMovies from "../utils/Hooks/useFetchMovies";
-import { useEffect, useState, Suspense } from "react";
+import { useEffect, Suspense } from "react";
 import { NowPlayingurl, popular, Toprated, Upcoming } from "../utils/constants/ImgConst";
 import SecondaryComponent from "./SecondaryComponent";
 import { addMovie, addPopularMovies, addTopratedMovies, addUpcomingMovies, setRandomMovie } from "../utils/redux/MovieSlice";
@@ -60,6 +60,8 @@ const Browse = () => {
                   release={randomMovie?.release_date}
                   popularity={randomMovie?.popularity}
                   vote={randomMovie?.vote_average}
+                  id={randomMovie?.id}
+                  videoKey={randomMovie?.videos?.find(v => v.site === "YouTube" && v.key)?.key}
                 />
                 <VideoBack key={randomMovie.id} movieId={randomMovie.id} movieImg={randomMovie.backdrop_path} />
               </div>

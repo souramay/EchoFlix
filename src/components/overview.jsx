@@ -1,6 +1,10 @@
 import { FaCalendarAlt, FaClock, FaGlobe, FaLanguage, FaFilm, FaBuilding, FaFlag, FaStar, FaMoneyBillWave, FaUsers, FaCheckCircle, FaTimesCircle, FaFire, FaLink, FaQuoteLeft, FaQuoteRight, FaIdBadge, FaImage } from "react-icons/fa";
+import { useSelector } from "react-redux";
+import useFetchDetails from "../utils/Hooks/useFetchDetails";
 
-const Overview = ({ detail }) => {
+const Overview = ({ movieId }) => {
+  const detail = useSelector((state) => state.details.detail) || [];
+  useFetchDetails(movieId);
   return (
     <div className="rounded-2xl shadow-2xl p-8 max-w-3xl lg:max-w-6xl mx-auto text-gray-100 border border-gray-800 bg-gradient-to-br from-gray-900 via-gray-950 to-black">
       <div className="flex flex-col md:flex-row gap-8 items-center mb-8 lg:gap-16 lg:items-start">
@@ -13,27 +17,27 @@ const Overview = ({ detail }) => {
           />
         )}
         <div className="w-full lg:w-2/3 flex flex-col justify-center lg:justify-start">
-          <h2 className="text-4xl lg:text-5xl font-black mb-2 tracking-tight text-gray-200 drop-shadow flex items-center gap-2">
+          <h2 className="text-2xl sm:text-3xl lg:text-5xl font-black mb-2 tracking-tight text-gray-200 drop-shadow flex items-center gap-2">
             <FaFilm className="text-gray-400" /> {detail.title}
           </h2>
           {detail.original_title && detail.original_title !== detail.title && (
-            <p className="text-sm lg:text-base text-gray-400 mb-1 flex items-center gap-2">
+            <p className="text-xs sm:text-sm lg:text-base text-gray-400 mb-1 flex items-center gap-2">
               <FaLanguage className="text-gray-500" /> <span className="font-semibold">{detail.original_title}</span>
             </p>
           )}
           {detail.tagline && (
-            <p className="text-lg lg:text-xl italic text-gray-400 mb-2 flex items-center gap-2">
+            <p className="text-sm sm:text-lg lg:text-xl italic text-gray-400 mb-2 flex items-center gap-2">
               <FaQuoteLeft className="text-gray-500" /> {detail.tagline}
             </p>
           )}
           {detail.belongs_to_collection?.name && (
-            <p className="text-sm lg:text-base text-gray-400 mb-2 flex items-center gap-2">
+            <p className="text-xs sm:text-sm lg:text-base text-gray-400 mb-2 flex items-center gap-2">
               <FaFilm className="text-gray-500" /> <span className="font-semibold">{detail.belongs_to_collection.name}</span>
             </p>
           )}
         </div>
       </div>
-      <p className="mb-8 text-lg lg:text-xl leading-relaxed bg-gray-900 bg-opacity-40 rounded-xl p-4 flex items-center gap-2 border border-gray-700">
+      <p className="mb-8 text-sm sm:text-lg lg:text-xl leading-relaxed bg-gray-900 bg-opacity-40 rounded-xl p-4 flex items-center gap-2 border border-gray-700">
         <FaQuoteRight className="text-gray-500" /> {detail.overview}
       </p>
 
@@ -69,57 +73,57 @@ const Overview = ({ detail }) => {
       )}
 
       <div className="grid grid-cols-2 lg:grid-cols-3 gap-x-10 gap-y-4 mb-8">
-        <div className="flex items-center gap-2">
+        <div className="flex items-center gap-2 text-xs sm:text-sm lg:text-base">
           <FaCalendarAlt className="text-gray-400" />
           <span className="font-semibold text-gray-300">Release:</span>
           <span>{detail.release_date}</span>
         </div>
-        <div className="flex items-center gap-2">
+        <div className="flex items-center gap-2 text-xs sm:text-sm lg:text-base">
           <FaClock className="text-gray-400" />
           <span className="font-semibold text-gray-300">Runtime:</span>
           <span>{detail.runtime} min</span>
         </div>
-        <div className="flex items-center gap-2">
+        <div className="flex items-center gap-2 text-xs sm:text-sm lg:text-base">
           <FaCheckCircle className="text-gray-400" />
           <span className="font-semibold text-gray-300">Status:</span>
           <span>{detail.status}</span>
         </div>
-        <div className="flex items-center gap-2">
+        <div className="flex items-center gap-2 text-xs sm:text-sm lg:text-base">
           <FaLanguage className="text-gray-400" />
           <span className="font-semibold text-gray-300">Lang:</span>
           <span>{detail.original_language?.toUpperCase()}</span>
         </div>
-        <div className="flex items-center gap-2">
+        <div className="flex items-center gap-2 text-xs sm:text-sm lg:text-base">
           <FaFilm className="text-gray-400" />
           <span className="font-semibold text-gray-300">Genres:</span>
           <span>{detail.genres?.map(genre => genre.name).join(", ")}</span>
         </div>
-        <div className="flex items-center gap-2">
+        <div className="flex items-center gap-2 text-xs sm:text-sm lg:text-base">
           <FaGlobe className="text-gray-400" />
           <span className="font-semibold text-gray-300">Spoken:</span>
           <span>{detail.spoken_languages?.map(lang => lang.english_name).join(", ")}</span>
         </div>
-        <div className="flex items-center gap-2">
+        <div className="flex items-center gap-2 text-xs sm:text-sm lg:text-base">
           <FaFlag className="text-gray-400" />
           <span className="font-semibold text-gray-300">Origin:</span>
           <span>{detail.origin_country?.join(", ")}</span>
         </div>
-        <div className="flex items-center gap-2">
+        <div className="flex items-center gap-2 text-xs sm:text-sm lg:text-base">
           <FaFire className="text-gray-400" />
           <span className="font-semibold text-gray-300">Popularity:</span>
           <span>{detail.popularity}</span>
         </div>
-        <div className="flex items-center gap-2">
+        <div className="flex items-center gap-2 text-xs sm:text-sm lg:text-base">
           {detail.adult ? <FaTimesCircle className="text-red-400" /> : <FaCheckCircle className="text-green-400" />}
           <span className="font-semibold text-gray-300">Adult:</span>
           <span>{detail.adult ? "Yes" : "No"}</span>
         </div>
-        <div className="flex items-center gap-2">
+        <div className="flex items-center gap-2 text-xs sm:text-sm lg:text-base">
           <FaFilm className="text-gray-400" />
           <span className="font-semibold text-gray-300">Video:</span>
           <span>{detail.video ? "Yes" : "No"}</span>
         </div>
-        <div className="flex items-center gap-2">
+        <div className="flex items-center gap-2 text-xs sm:text-sm lg:text-base">
           <FaIdBadge className="text-gray-400" />
           <span className="font-semibold text-gray-300">Movie ID:</span>
           <span>{detail.id}</span>
@@ -173,22 +177,22 @@ const Overview = ({ detail }) => {
       </div>
 
       <div className="flex flex-wrap gap-8 mb-8 justify-center">
-        <div className="flex items-center gap-2">
+        <div className="flex items-center gap-2 text-xs sm:text-sm lg:text-base">
           <FaMoneyBillWave className="text-gray-400" />
           <span className="font-semibold text-gray-300">Budget:</span>
           <span>${detail.budget?.toLocaleString()}</span>
         </div>
-        <div className="flex items-center gap-2">
+        <div className="flex items-center gap-2 text-xs sm:text-sm lg:text-base">
           <FaMoneyBillWave className="text-gray-400" />
           <span className="font-semibold text-gray-300">Revenue:</span>
           <span>${detail.revenue?.toLocaleString()}</span>
         </div>
-        <div className="flex items-center gap-2">
+        <div className="flex items-center gap-2 text-xs sm:text-sm lg:text-base">
           <FaStar className="text-yellow-400" />
           <span className="font-semibold text-gray-300">Rating:</span>
           <span>{detail.vote_average} / 10</span>
         </div>
-        <div className="flex items-center gap-2">
+        <div className="flex items-center gap-2 text-xs sm:text-sm lg:text-base">
           <FaUsers className="text-gray-400" />
           <span className="font-semibold text-gray-300">Votes:</span>
           <span>{detail.vote_count}</span>

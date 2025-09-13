@@ -13,7 +13,7 @@ const SecondaryComponent = ({ title, movies }) => {
   
 const handleClick = (id) => {
   dispatch(setVideo(id));
-  navigate(`/detail/${id}`); // Pass the movie ID in the URL
+  navigate(`/detail/${id}`); 
 };
 
   return (

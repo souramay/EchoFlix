@@ -12,6 +12,7 @@ import ErrorPage from "./components/ErrorPage";
 import Search from "./components/Search";
 import MovieDetail from "./components/MovieDetail";
 
+
 const router = createBrowserRouter([
   {
     path: "/",
@@ -22,6 +23,7 @@ const router = createBrowserRouter([
       { path: "browse", element: <Browse /> },
       { path: "search", element:<Search/>  },
       { path: "detail/:movieId", element:<MovieDetail/>  },
+      
     ],
   },
 ]);

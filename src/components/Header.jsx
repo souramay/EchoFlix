@@ -54,7 +54,10 @@ useEffect(()=>{
 
   return (
     <div className="flex justify-between items-center z-20 relative -mt-4 ">
-      <div className="w-36 mx-4 cursor-pointer">
+      <div
+        className="w-36 mx-4 cursor-pointer"
+        onClick={() => navigate("/browse")}
+      >
         <img alt="logo" src={logo} className="w-auto" />
       </div>
 

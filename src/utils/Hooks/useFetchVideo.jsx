@@ -20,12 +20,12 @@ const useFetchVideo = (movieId,slice) => {
         const videoData = await response.json();
         dispatch(slice(videoData.results));
         
-        // console.log(videoData);
+        console.log(videoData);
       }
 
     useEffect(() => {
       fetchVideo();
-    }, []);
+    }, [movieId]);
   
 }
 
