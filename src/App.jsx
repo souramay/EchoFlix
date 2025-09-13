@@ -23,6 +23,9 @@ function App() {
         if(location.pathname==="/"){
         navigate("/browse");
         }
+        if(location.pathname==="/login"){
+          navigate("/browse");
+          }
       } else {
         dispatch(removeUser());
         navigate("/");
