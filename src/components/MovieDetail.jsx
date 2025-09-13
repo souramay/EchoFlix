@@ -26,6 +26,7 @@ const MovieDetail = () => {
   const videoplay = useSelector((state) => state.details.videoplay);
   const playerRef = useRef(null);
   const navigate = useNavigate();
+  
 
   const [overviews, setoverviews] = useState(true);
   const [clip, setclip] = useState(false);
@@ -42,6 +43,7 @@ const MovieDetail = () => {
   usefetchcaste(movieId);
   useSimilarfetch(movieId);
   useReviewfetch(movieId);
+  
 
   useEffect(() => {
     if (videoplay === null) {
@@ -75,6 +77,15 @@ const MovieDetail = () => {
   useEffect(() => {
     dispatch(resetDetail());
     // then fetch new movie detail and trailer
+  }, [movieId]);
+
+  useEffect(() => {
+    setoverviews(true);
+    setclip(false);
+    setcaste(false);
+    setreviews(false);
+    setGallery(false);
+    setSimilarRecommended(false);
   }, [movieId]);
 
   return (
