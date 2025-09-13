@@ -6,6 +6,10 @@ EchoFlix is a modern movie browsing and recommendation web app built with React.
 
 Visit the app: [https://echo-flix.web.app/](https://echo-flix.web.app/)
 
+## Screenshot
+
+![EchoFlix Screenshot](public/img/screenshot/image.png)
+
 ## Features
 
 - Browse trending and recent movies
