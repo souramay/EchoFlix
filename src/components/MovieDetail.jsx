@@ -43,6 +43,11 @@ const MovieDetail = () => {
   usefetchcaste(movieId);
   useSimilarfetch(movieId);
   useReviewfetch(movieId);
+
+  // Scroll to top on mount
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [movieId]);
   
 
   useEffect(() => {
@@ -109,146 +114,158 @@ const MovieDetail = () => {
               {detail.title || detail.original_title}
             </p>
 
-            {videoplay && (
-              <>
-                <div
-                  ref={playerRef}
-                  className="mx-auto w-full max-w-3xl lg:max-w-5xl aspect-video mt-5 rounded-lg"
-                >
-                  <iframe
-                    className="w-full h-full rounded-lg "
-                    src={`https://www.youtube.com/embed/${videoplay.key}?rel=0&modestbranding=1&showinfo=0&autoplay=1`}
-                    title={videoplay.name}
-                    frameBorder="0"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                    allowFullScreen
-                    sandbox="allow-scripts allow-same-origin allow-presentation"
-                  />
-                </div>
-                <div className="flex mt-8 justify-center gap-3 text-gray-400 text-[11px] flex-wrap">
-                  <p
-                    className={`cursor-pointer md:text-xl pb-1 ${
-                      overviews ? "border-b-2 border-gray-400" : ""
-                    }`}
-                    onClick={() => {
-                      setoverviews(true);
-                      setclip(false);
-                      setcaste(false);
-                      setreviews(false);
-                      setGallery(false);
-                      setSimilarRecommended(false);
-                    }}
-                  >
-                    overviews
-                  </p>
-                  <p
-                    className={`pb-1 cursor-pointer md:text-xl ${
-                      clip ? "border-b-2 border-gray-400" : ""
-                    }`}
-                    onClick={() => {
-                      setclip(true);
-                      setoverviews(false);
-                      setcaste(false);
-                      setreviews(false);
-                      setGallery(false);
-                      setSimilarRecommended(false);
-                    }}
-                  >
-                    Clips and Trailers
-                  </p>
-                  <p
-                    className={`cursor-pointer  pb-1 md:text-xl ${
-                      caste ? "border-b-2 border-gray-400" : ""
-                    }`}
-                    onClick={() => {
-                      setcaste(true);
-                      setoverviews(false);
-                      setclip(false);
-                      setreviews(false);
-                      setGallery(false);
-                      setSimilarRecommended(false);
-                    }}
-                  >
-                    Caste
-                  </p>
-                  <p
-                    className={`cursor-pointer md:text-xl pb-1 ${
-                      reviews ? "border-b-2 border-gray-400" : ""
-                    }`}
-                    onClick={() => {
-                      setreviews(true);
-                      setoverviews(false);
-                      setclip(false);
-                      setcaste(false);
-                      setGallery(false);
-                      setSimilarRecommended(false);
-                    }}
-                  >
-                    Reviews
-                  </p>
-                  <p
-                    className={`cursor-pointer md:text-xl pb-1 ${
-                      gallery ? "border-b-2 border-gray-400" : ""
-                    }`}
-                    onClick={() => {
-                      setGallery(true);
-                      setoverviews(false);
-                      setclip(false);
-                      setcaste(false);
-                      setreviews(false);
-                      setSimilarRecommended(false);
-                    }}
-                  >
-                    Gallery
-                  </p>
-                  <p
-                    className={`cursor-pointer md:text-xl pb-1 ${
-                      similarRecommended ? "border-b-2 border-gray-400" : ""
-                    }`}
-                    onClick={() => {
-                      setoverviews(false);
-                      setclip(false);
-                      setcaste(false);
-                      setreviews(false);
-                      setGallery(false);
-                      setSimilarRecommended(true); 
-                    }}
-                  >
-                    Similar & Recommended
-                  </p>
-                </div>
-                <div>
-                  {overviews && (
-                    <div className="flex justify-center w-full">
-                      <div className="p-4 px-2 w-full  lg:max-w-6xl font-serif my-3 text-gray-200 mx-auto box-border overflow-x-auto max-w-full">
-                        <Overview movieId={movieId} />
-                      </div>
-                    </div>
-                  )}
-                  {clip && (
-                    <div className="flex justify-center mt-8 w-full">
-                      <Clips playerRef={playerRef} />
-                    </div>
-                  )}
-                  {caste && (
-                    <div>
-                      <Caste movieId={movieId} />
-                    </div>
-                  )}
-                  {reviews && <div>{<Reviews movieId={movieId} />}</div>}
-                  {gallery && (
-                    <div>
-                      <Gallery movieId={movieId} />
-                    </div>
-                  )}
-                  {similarRecommended && (
-                    <div className="mt-8">
-                      <Similar movieId={movieId} />
-                    </div>
-                  )}
-                </div>
-              </>
+            {videoplay ? (
+              <div
+                ref={playerRef}
+                className="mx-auto w-full max-w-3xl lg:max-w-5xl aspect-video mt-5 rounded-lg"
+              >
+                <iframe
+                  className="w-full h-full rounded-lg"
+                  src={`https://www.youtube.com/embed/${videoplay.key}?rel=0&modestbranding=1&showinfo=0&autoplay=1`}
+                  title={videoplay.name}
+                  frameBorder="0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowFullScreen
+                  sandbox="allow-scripts allow-same-origin allow-presentation"
+                />
+              </div>
+            ) : (
+              <div className="mx-auto w-full max-w-3xl lg:max-w-5xl aspect-video mt-5 rounded-lg bg-black flex items-center justify-center">
+                <img
+                  src={
+                    detail.backdrop_path
+                      ? `https://image.tmdb.org/t/p/w780${detail.backdrop_path}`
+                      : detail.poster_path
+                      ? `https://image.tmdb.org/t/p/w500${detail.poster_path}`
+                      : "/default-movie.jpg" // fallback image
+                  }
+                  alt={detail.title || "Movie"}
+                  className="w-full h-full object-cover rounded-lg"
+                />
+              </div>
             )}
+            <div className="flex mt-8 justify-center gap-3 text-gray-400 text-[11px] flex-wrap">
+              <p
+                className={`cursor-pointer md:text-xl pb-1 ${
+                  overviews ? "border-b-2 border-gray-400" : ""
+                }`}
+                onClick={() => {
+                  setoverviews(true);
+                  setclip(false);
+                  setcaste(false);
+                  setreviews(false);
+                  setGallery(false);
+                  setSimilarRecommended(false);
+                }}
+              >
+                overviews
+              </p>
+              <p
+                className={`pb-1 cursor-pointer md:text-xl ${
+                  clip ? "border-b-2 border-gray-400" : ""
+                }`}
+                onClick={() => {
+                  setclip(true);
+                  setoverviews(false);
+                  setcaste(false);
+                  setreviews(false);
+                  setGallery(false);
+                  setSimilarRecommended(false);
+                }}
+              >
+                Clips and Trailers
+              </p>
+              <p
+                className={`cursor-pointer  pb-1 md:text-xl ${
+                  caste ? "border-b-2 border-gray-400" : ""
+                }`}
+                onClick={() => {
+                  setcaste(true);
+                  setoverviews(false);
+                  setclip(false);
+                  setreviews(false);
+                  setGallery(false);
+                  setSimilarRecommended(false);
+                }}
+              >
+                Caste
+              </p>
+              <p
+                className={`cursor-pointer md:text-xl pb-1 ${
+                  reviews ? "border-b-2 border-gray-400" : ""
+                }`}
+                onClick={() => {
+                  setreviews(true);
+                  setoverviews(false);
+                  setclip(false);
+                  setcaste(false);
+                  setGallery(false);
+                  setSimilarRecommended(false);
+                }}
+              >
+                Reviews
+              </p>
+              <p
+                className={`cursor-pointer md:text-xl pb-1 ${
+                  gallery ? "border-b-2 border-gray-400" : ""
+                }`}
+                onClick={() => {
+                  setGallery(true);
+                  setoverviews(false);
+                  setclip(false);
+                  setcaste(false);
+                  setreviews(false);
+                  setSimilarRecommended(false);
+                }}
+              >
+                Gallery
+              </p>
+              <p
+                className={`cursor-pointer md:text-xl pb-1 ${
+                  similarRecommended ? "border-b-2 border-gray-400" : ""
+                }`}
+                onClick={() => {
+                  setoverviews(false);
+                  setclip(false);
+                  setcaste(false);
+                  setreviews(false);
+                  setGallery(false);
+                  setSimilarRecommended(true); 
+                }}
+              >
+                Similar & Recommended
+              </p>
+            </div>
+            <div>
+              {overviews && (
+                <div className="flex justify-center w-full">
+                  <div className="p-4 px-2 w-full  lg:max-w-6xl font-serif my-3 text-gray-200 mx-auto box-border overflow-x-auto max-w-full">
+                    <Overview movieId={movieId} />
+                  </div>
+                </div>
+              )}
+              {clip && (
+                <div className="flex justify-center mt-8 w-full">
+                  <Clips playerRef={playerRef} />
+                </div>
+              )}
+              {caste && (
+                <div>
+                  <Caste movieId={movieId} />
+                </div>
+              )}
+              {reviews && <div>{<Reviews movieId={movieId} />}</div>}
+              {gallery && (
+                <div>
+                  <Gallery movieId={movieId} />
+                </div>
+              )}
+              {similarRecommended && (
+                <div className="mt-8">
+                  <Similar movieId={movieId} />
+                </div>
+              )}
+            </div>
           </div>
         )}
       </div>

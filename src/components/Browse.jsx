@@ -24,6 +24,13 @@ const Browse = () => {
   useFetchMovies(Toprated, addTopratedMovies, TopratedMovies);
   useFetchMovies(Upcoming, addUpcomingMovies, UpcomingMovies);
 
+
+
+  // Scroll to top on mount
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
  
 
   // Pick a new random movie whenever the list is available/changes
