@@ -11,7 +11,7 @@ const useSimilarfetch = (movieId) => {
     const response = await fetch(url, options);
     const data = await response.json();
     dispatch(setSimilar(data.results || []));
-    // console.log("Similar Data:", data);
+    
   };
 
   useEffect(() => {

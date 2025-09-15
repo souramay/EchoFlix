@@ -12,7 +12,7 @@ const useFetchCaste = (movieId) => {
     const response = await fetch(url, options);
     const data = await response.json();
     dispatch(setCaste(data.cast || []));
-    console.log("Caste Data:", data);
+    
   };
 
   useEffect(() => {

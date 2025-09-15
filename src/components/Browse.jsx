@@ -4,11 +4,12 @@ import MovieRecent from "./MovieRecent";
 import VideoBack from "./VideoBack";
 import useFetchMovies from "../utils/Hooks/useFetchMovies";
 import { useEffect, Suspense } from "react";
-import { NowPlayingurl, popular, Toprated, Upcoming } from "../utils/constants/ImgConst";
 import SecondaryComponent from "./SecondaryComponent";
-import { addMovie, addPopularMovies, addTopratedMovies, addUpcomingMovies, setRandomMovie } from "../utils/redux/MovieSlice";
+import { setRandomMovie } from "../utils/redux/MovieSlice";
 import { clearGpt } from "../utils/redux/GptSlice";
 import Loader from "./Loader";
+import movieSections from "../utils/constants/MovieSelection";
+import actionMap from "../utils/actionmap";
 
 const Browse = () => {
   const moviesList = useSelector((state) => state.movies.NowplayingMovies);
@@ -19,19 +20,25 @@ const Browse = () => {
 
   const dispatch=useDispatch();
 
-  useFetchMovies(NowPlayingurl, addMovie,moviesList);
-  useFetchMovies(popular, addPopularMovies, popularMovies);
-  useFetchMovies(Toprated, addTopratedMovies, TopratedMovies);
-  useFetchMovies(Upcoming, addUpcomingMovies, UpcomingMovies);
+// hardcoded approach
+  // useFetchMovies(NowPlayingurl, addMovie,moviesList);
+  // useFetchMovies(popular, addPopularMovies, popularMovies);
+  // useFetchMovies(Toprated, addTopratedMovies, TopratedMovies);
+  // useFetchMovies(Upcoming, addUpcomingMovies, UpcomingMovies);
+
+
+   // grab states dynamically
+  const sectionStates = movieSections.map((section) =>
+    useSelector((state) => state.movies[section.key])
+  );
+
+  // fetch dynamically
+  movieSections.forEach((section, i) => {
+    useFetchMovies(section.url, actionMap[section.action], sectionStates[i]);
+  });
 
 
 
-  // Scroll to top on mount
-  useEffect(() => {
-    window.scrollTo(0, 0);
-  }, []);
-
- 
 
   // Pick a new random movie whenever the list is available/changes
   useEffect(() => {
@@ -40,11 +47,23 @@ const Browse = () => {
       dispatch(setRandomMovie(pickedMovie));
     }
   }, [moviesList]);
+  const allLoaded = sectionStates.every(section => section.length > 0) && randomMovie;
 
   // Clear GPT state once on mount
   useEffect(() => {
     dispatch(clearGpt());
   }, [dispatch]);
+
+  
+
+useEffect(() => {
+  if (allLoaded) {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  }
+}, [allLoaded]);
+ 
+
+  
 
   // console.log("NowplayingMovies:", moviesList);
   // console.log("PopularMovies:", popularMovies);
@@ -55,7 +74,7 @@ const Browse = () => {
   return (
     <>
       <div className="fixed inset-0 w-full h-screen bg-gradient-to-br from-black via-black/80 to-gray-900 " />
-      {(moviesList.length > 0 && popularMovies.length > 0 && TopratedMovies.length > 0 && UpcomingMovies.length > 0 && randomMovie)
+      {allLoaded
         ? (
           <>
             <Header />
@@ -73,11 +92,22 @@ const Browse = () => {
                 <VideoBack key={randomMovie.id} movieId={randomMovie.id} movieImg={randomMovie.backdrop_path} />
               </div>
               <div className="w-full min-h-[400px] bg-gradient-to-br from-black/80 via-gray-900/80 to-black/80 rounded-t-3xl py-4 pl-4 pr-2 z-10 mt-8 sm:py-12 sm:pl-6 sm:pr-4 md:py-13 md:pl-8 md:pr-6 lg:py-34 lg:pl-10 lg:pr-7 max-w-full overflow-hidden">
+              {/* hardcoded approach */}
                 <div className="space-y-4 sm:space-y-6 md:space-y-8 lg:space-y-6">
-                  <SecondaryComponent title={"Upcoming"} movies={UpcomingMovies} />
+                  {/* <SecondaryComponent title={"Upcoming"} movies={UpcomingMovies} />
                   <SecondaryComponent title={"Now Playing"} movies={moviesList} />
                   <SecondaryComponent title={"Popular"} movies={popularMovies} />
-                  <SecondaryComponent title={"Top Rated"} movies={TopratedMovies} />
+                  <SecondaryComponent title={"Top Rated"} movies={TopratedMovies} /> */}
+
+                  {/* dynamic approach */}
+                  {movieSections.map((section, i) => (
+        <SecondaryComponent
+          key={section.title}
+          title={section.title}
+          movies={sectionStates[i]}
+        />
+      ))}
+                  
                 </div>
               </div>
             </div>

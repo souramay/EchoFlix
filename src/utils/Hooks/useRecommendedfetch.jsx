@@ -11,7 +11,7 @@ const useRecommendedfetch = (movieId) => {
     const response = await fetch(url, options);
     const data = await response.json();
     dispatch(setRecommended(data.results || []));
-    // console.log("Recommended Data:", data);
+    
   };
 
   useEffect(() => {

@@ -15,7 +15,7 @@ const useFetchDetails = (id) => {
         const response = await fetch(url, options);
         const data = await response.json();
         dispatch(setDetail(data));
-        // console.log(data);
+       
       }
     
     useEffect(() => {

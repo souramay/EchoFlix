@@ -12,7 +12,7 @@ const useFetchMovies = (url,storeadd,movie) => {
         const response = await fetch(url, options);
         const data = await response.json();
         dispatch(storeadd(data.results));
-        // console.log(data);
+        
       }
     
     useEffect( ()=>{

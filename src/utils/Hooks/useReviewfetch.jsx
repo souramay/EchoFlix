@@ -12,7 +12,7 @@ const useReviewfetch = (movieId) => {
     const response = await fetch(url, options);
     const data = await response.json();
     dispatch(setReviews(data.results || []));
-    // console.log("Review Data:", data);
+    
   };
 
   useEffect(() => {

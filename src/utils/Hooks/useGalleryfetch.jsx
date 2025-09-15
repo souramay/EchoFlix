@@ -11,7 +11,7 @@ const useGalleryfetch = (movieId) => {
     const response = await fetch(url, options);
     const data = await response.json();
     dispatch(setGallery(data.backdrops || [])); 
-    console.log("Gallery Data:", data);
+   
   };
 
   useEffect(() => {

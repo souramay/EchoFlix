@@ -24,7 +24,7 @@ const Searchmoviecard = () => {
       );
     })
     .filter(Boolean);
-    // console.log(filteredMovies);
+    
 const handleClick = (id) => {
   dispatch(setVideo(id));
   navigate(`/detail/${id}`); // Pass the movie ID in the URL
