@@ -9,6 +9,7 @@ Visit the app: [https://echo-flix.web.app/](https://echo-flix.web.app/)
 ## Screenshot
 
 ![EchoFlix Screenshot](public/img/screenshot/image.png)
+![EchoFlix Screenshot](public/img/screenshot/image1.png)
 
 ## Features
 
