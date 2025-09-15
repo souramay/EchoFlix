@@ -44,36 +44,8 @@ src/
   main.jsx            # Entry point
 ```
 
-## Getting Started
 
-1. **Clone the repository:**
-   ```
-   git clone https://github.com/souramay/EchoFlix.git
-   cd EchoFlix-main
-   ```
 
-2. **Install dependencies:**
-   ```
-   npm install
-   ```
-
-3. **Set up Firebase:**
-   - Add your Firebase config to the appropriate file in `src\utils\firebase.js`.
-
-4. **Start the development server:**
-   ```
-   npm run dev
-   ```
-
-5. **Open in browser:**
-   - Visit [http://localhost:5173](http://localhost:5173) (or the port shown in your terminal).
-
-## Environment Variables
-
-- TMDB API Key
-- Firebase config
-
-Set these in your environment or directly in the config files as needed.
 
 ## Credits
 
