@@ -23,7 +23,7 @@ Visit the app: [https://echo-flix.web.app/](https://echo-flix.web.app/)
 - Responsive design for all devices
 - User authentication (Sign Up / Sign In)
 - Personalized user profile
-- Social links in footer
+
 
 ## Tech Stack
 
