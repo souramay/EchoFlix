@@ -12,7 +12,7 @@ const useGallerytvfetch = (movieId) => {
     const response = await fetch(url, options);
     const data = await response.json();
     dispatch(setTvGallery(data.backdrops || [])); 
-    console.log(data);
+   
     
    
   };

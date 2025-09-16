@@ -144,7 +144,7 @@ const MovieDetail = () => {
                 />
               </div>
             )}
-            <div className="flex mt-8 justify-center gap-3 text-gray-400 text-[11px] flex-wrap">
+            <div className="flex mt-8 sm:gap-10 justify-center gap-3 text-gray-400 text-[11px] flex-wrap">
               <p
                 className={`cursor-pointer md:text-xl pb-1 ${
                   overviews ? "border-b-2 border-gray-400" : ""

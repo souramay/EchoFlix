@@ -1,7 +1,8 @@
 import { useDispatch, useSelector } from "react-redux"
 import { logo } from "../utils/constants/ImgConst"
 import { signOut } from "firebase/auth";
-
+import { resetTvvideoId } from "../utils/redux/tvdetailslice";
+import { resetvideoId} from "../utils/redux/MovieSlice";
 
 import { useEffect, useState } from "react";
 import { FiChevronDown, FiSearch } from "react-icons/fi";
@@ -16,6 +17,7 @@ const Header = () => {
   const searchClicked = useSelector((state) => state.gpt.SearchClicked);
   const navigate = useNavigate();
   const locate = useLocation();
+  
 
   const dispatch = useDispatch();
 
@@ -57,7 +59,14 @@ const Header = () => {
     <div className="flex justify-between items-center z-20 relative -mt-4 ">
       <div
         className="w-36 mx-4 cursor-pointer"
-        onClick={() => navigate("/browse")}
+        onClick={() => {
+          navigate("/browse");
+          if(locate.pathname.startsWith("/tvBrowse") || locate.pathname.startsWith("/tvdetail/")){
+            dispatch(resetTvvideoId());
+          dispatch(resetvideoId());
+          }
+          
+        }}
       >
         <img alt="logo" src={logo} className="w-auto" />
       </div>

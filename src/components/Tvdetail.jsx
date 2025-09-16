@@ -27,6 +27,7 @@ import TvSimilar from "./TvSimilar";
 import Clips from "./clips";
 import TvReviews from "./TvReview";
 import { resetTvDetail, setTvTrailer, setTvVideoplay } from "../utils/redux/tvdetailslice";
+import Seasontv from "./Seaontv";
 
 
 
@@ -46,6 +47,7 @@ const Tvdetail = () => {
   const [reviews, setreviews] = useState(false);
   const [gallery, setGallery] = useState(false);
   const [similarRecommended, setSimilarRecommended] = useState(false);
+  const [season,setseason]=useState(false);
 
   // Add a loading state
   const [loading, setLoading] = useState(true);
@@ -157,7 +159,7 @@ const Tvdetail = () => {
                 />
               </div>
             )}
-            <div className="flex mt-8 justify-center gap-3 text-gray-400 text-[11px] flex-wrap">
+            <div className="flex mt-8 justify-center sm:gap-10 gap-3 text-gray-400 text-[11px] flex-wrap">
               <p
                 className={`cursor-pointer md:text-xl pb-1 ${
                   overviews ? "border-b-2 border-gray-400" : ""
@@ -169,9 +171,26 @@ const Tvdetail = () => {
                   setreviews(false);
                   setGallery(false);
                   setSimilarRecommended(false);
+                  setseason(false);
                 }}
               >
                 overviews
+              </p>
+              <p
+                className={`cursor-pointer md:text-xl pb-1 ${
+                  season ? "border-b-2 border-gray-400" : ""
+                }`}
+                onClick={() => {
+                  setoverviews(false);
+                  setclip(false);
+                  setcaste(false);
+                  setreviews(false);
+                  setGallery(false);
+                  setSimilarRecommended(false);
+                  setseason(true);
+                }}
+              >
+                Seasons
               </p>
               <p
                 className={`pb-1 cursor-pointer md:text-xl ${
@@ -184,6 +203,7 @@ const Tvdetail = () => {
                   setreviews(false);
                   setGallery(false);
                   setSimilarRecommended(false);
+                  setseason(false);
                 }}
               >
                 Clips and Trailers
@@ -199,6 +219,7 @@ const Tvdetail = () => {
                   setreviews(false);
                   setGallery(false);
                   setSimilarRecommended(false);
+                  setseason(false);
                 }}
               >
                 Caste
@@ -214,6 +235,7 @@ const Tvdetail = () => {
                   setcaste(false);
                   setGallery(false);
                   setSimilarRecommended(false);
+                  setseason(false);
                 }}
               >
                 Reviews
@@ -229,6 +251,7 @@ const Tvdetail = () => {
                   setcaste(false);
                   setreviews(false);
                   setSimilarRecommended(false);
+                  setseason(false);
                 }}
               >
                 Gallery
@@ -244,6 +267,7 @@ const Tvdetail = () => {
                   setreviews(false);
                   setGallery(false);
                   setSimilarRecommended(true); 
+                  setseason(false);
                 }}
               >
                 Similar & Recommended
@@ -254,6 +278,13 @@ const Tvdetail = () => {
                 <div className="flex justify-center w-full">
                   <div className="p-4 px-2 w-full  lg:max-w-6xl font-serif my-3 text-gray-200 mx-auto box-border overflow-x-auto max-w-full">
                     <TvOverview tvId={tvId} />
+                  </div>
+                </div>
+              )}
+               {season && (
+                <div className="flex justify-center w-full">
+                  <div className="p-4 px-2 w-full  lg:max-w-6xl font-serif my-3 text-gray-200 mx-auto box-border overflow-x-auto max-w-full">
+                    <Seasontv tvId={tvId} />
                   </div>
                 </div>
               )}

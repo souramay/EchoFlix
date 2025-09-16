@@ -112,11 +112,11 @@ useEffect(() => {
 />
 
               </div>
-                <div className="flex -mb-21 z-20 mt-8 sticky ml-7    bg-gray-800 bg-opacity-50 rounded-full p-[2px] w-full max-w-[200px] sm:max-w-[260px]  shadow-sm">
+                <div className="flex  -mb-21 z-20 mt-8 sticky ml-7    bg-gray-800 bg-opacity-50 rounded-full p-[2px] w-full max-w-[200px] sm:max-w-[260px]  shadow-sm">
   <button
-    className={`flex-1 min-w-[90px] py-2 rounded-full flex justify-center items-center gap-1 text-xs font-semibold transition-colors duration-200 ${
+    className={`flex-1 min-w-[90px] cursor-pointer py-2 rounded-full flex justify-center items-center gap-1 text-xs font-semibold transition-colors duration-200 ${
       !istv
-        ? "bg-blue-500 text-white shadow-sm"
+        ? "bg-red-800 text-white shadow-sm"
         : "text-gray-400 hover:bg-gray-700"
     }`}
     onClick={() => {setistv(false);
@@ -132,9 +132,9 @@ useEffect(() => {
     <span className="hidden sm:inline">Movies</span>
   </button>
   <button
-    className={`flex-1 min-w-[90px] py-2 ml-1 rounded-full flex justify-center items-center gap-1 text-xs font-semibold transition-colors duration-200 ${
+    className={`flex-1 cursor-pointer min-w-[90px] py-2 ml-1 rounded-full flex justify-center items-center gap-1 text-xs font-semibold transition-colors duration-200 ${
       istv
-        ? "bg-blue-500 text-white shadow-sm"
+        ? "bg-red-800 text-white shadow-sm"
         : "text-gray-400 hover:bg-gray-700"
     }`}
 onClick={() => { setistv(true);
