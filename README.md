@@ -16,8 +16,8 @@ Visit the app: [https://echo-flix.web.app/](https://echo-flix.web.app/)
 
 ## Features
 
-- Browse trending , recent or any movies
-- View detailed movie info, cast, reviews, and gallery
+- Browse trending , recent or any movies ot tv shows or series.
+- View detailed movie info, cast, reviews, and gallery.
 - Watch trailers and clips
 - Smart GPT-powered movie search
 - Responsive design for all devices
