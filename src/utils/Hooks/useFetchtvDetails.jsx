@@ -1,14 +1,14 @@
 import { useEffect } from "react"
 import { useDispatch } from "react-redux";
 import options from "../constants/constantMovie";
-
-
+import { setTvDetail } from "../redux/tvdetailslice";
 import { setDetail } from "../redux/DetailMovieSlice";
 
 
-const useFetchDetails = (id) => {
-    const url = 'https://api.themoviedb.org/3/movie/' + id + '?language=en-US';
-    
+const useFetchtvDetails = (id) => {
+   const url = 'https://api.themoviedb.org/3/tv/' + id + '?language=en-US';
+  
+  
     const dispatch =useDispatch();
     
     
@@ -16,14 +16,13 @@ const useFetchDetails = (id) => {
         
         const response = await fetch(url, options);
         const data = await response.json();
-        dispatch(setDetail(data));
+        dispatch(setTvDetail(data));
        
       }
     
     useEffect(() => {
       fetchnowplayingmovies();
     }, []);
+}
 
-};
-
-export default useFetchDetails;
+export default useFetchtvDetails;

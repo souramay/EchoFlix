@@ -3,7 +3,7 @@ import {
   addPopularMovies,
   addTopratedMovies,
   addUpcomingMovies,
-  addAdultMovies,       
+  addAdultMovies,
   addActionMovies,
   addAdventureMovies,
   addAnimationMovies,
@@ -25,12 +25,37 @@ import {
   addWesternMovies,
 } from "./redux/MovieSlice";
 
+import {
+  addAiringToday,
+  addOnTheAir,
+  addPopularTv,
+  addTopRatedTv,
+  addAdultTv,
+  addActionTv,
+  addAnimationTv,
+  addComedyTv,
+  addCrimeTv,
+  addDocumentaryTv,
+  addDramaTv,
+  addFamilyTv,
+  addKidsTv,
+  addMysteryTv,
+  addNewsTv,
+  addRealityTv,
+  addScifiFantasyTv,
+  addSoapTv,
+  addTalkTv,
+  addWarPoliticsTv,
+  addWesternTv,
+} from "./redux/tvSlice";
+
 const actionMap = {
+  // Movie actions
   addMovie,
   addPopularMovies,
   addTopratedMovies,
   addUpcomingMovies,
-  addAdultMovies,       
+  addAdultMovies,
   addActionMovies,
   addAdventureMovies,
   addAnimationMovies,
@@ -50,6 +75,29 @@ const actionMap = {
   addThrillerMovies,
   addWarMovies,
   addWesternMovies,
+
+  // TV actions
+  addAiringToday,
+  addOnTheAir,
+  addPopularTv,
+  addTopRatedTv,
+  addAdultTv,
+  addActionTv,
+  addAnimationTv,
+  addComedyTv,
+  addCrimeTv,
+  addDocumentaryTv,
+  addDramaTv,
+  addFamilyTv,
+  addKidsTv,
+  addMysteryTv,
+  addNewsTv,
+  addRealityTv,
+  addScifiFantasyTv,
+  addSoapTv,
+  addTalkTv,
+  addWarPoliticsTv,
+  addWesternTv,
 };
 
 export default actionMap;

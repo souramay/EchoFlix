@@ -91,6 +91,10 @@ const tvSlice = createSlice({
     addWesternTv(state, action) {
       state.westernTv = action.payload;
     },
+    resettv(state) {
+      state.popularTv = [];
+    },
+      
   },
 });
 
@@ -116,6 +120,7 @@ export const {
   addTalkTv,
   addWarPoliticsTv,
   addWesternTv,
+  resettv,
 } = tvSlice.actions;
 
 export default tvSlice.reducer;

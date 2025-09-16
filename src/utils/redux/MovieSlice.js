@@ -119,7 +119,14 @@ export const MovieSlice = createSlice({
     addWesternMovies: (state, action) => {
       state.westernMovies = action.payload;
     },
-  },
+    resetmovie ( state) {
+      state.NowplayingMovies = [];
+    }
+    ,resetvideoId ( state) {
+      state.videoId = null;
+      state.randomMovie = null;
+    }
+  }
 });
 
 export const {
@@ -154,6 +161,8 @@ export const {
   addThrillerMovies,
   addWarMovies,
   addWesternMovies,
+  resetmovie,
+  resetvideoId,
 } = MovieSlice.actions;
 
 export default MovieSlice.reducer;

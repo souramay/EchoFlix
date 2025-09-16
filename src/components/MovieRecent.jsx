@@ -1,15 +1,23 @@
 import { FaStar, FaFire, FaPlay, FaInfoCircle } from "react-icons/fa";
-import { useNavigate } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { setVideo } from "../utils/redux/DetailMovieSlice";
+import { setTvVideo } from "../utils/redux/tvdetailslice";
 
 const MovieRecent = ({ title, overview, vote, popularity, release, id, videoKey }) => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
+  const location=useLocation();
 
   const handlePlayClick = () => {
-    dispatch(setVideo(id));
-    navigate(`/detail/${id}`);
+    if(location.pathname==="/tvBrowse"){
+                    navigate(`/tvdetail/${id}`);
+                    dispatch(setTvVideo(id));
+                  }
+                  else{
+                    navigate(`/detail/${id}`);
+                    dispatch(setVideo(id));
+                  }
   };
 
   return (
@@ -45,8 +53,15 @@ const MovieRecent = ({ title, overview, vote, popularity, release, id, videoKey 
               <button
                 className="cursor-pointer flex justify-center items-center w-full sm:w-36 md:w-40 lg:w-44 bg-gray-700 opacity-85 text-white px-4 sm:px-5 md:px-6 py-2 sm:py-2.5 rounded hover:bg-gray-600 text-sm sm:text-base whitespace-nowrap"
                 onClick={() => {
-                  dispatch(setVideo(id));
-                  navigate(`/detail/${id}`);
+                  if(location.pathname==="/tvBrowse"){
+                    navigate(`/tvdetail/${id}`);
+                    dispatch(setTvVideo(id));
+                  }
+                  else{
+                    navigate(`/detail/${id}`);
+                    dispatch(setVideo(id));
+                  }
+                 
                 }}
               >
                 <FaInfoCircle className="w-4 h-4 sm:w-5 sm:h-5 mr-2" />

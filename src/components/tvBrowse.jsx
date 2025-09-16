@@ -3,28 +3,34 @@ import Header from "./Header";
 import MovieRecent from "./MovieRecent";
 import VideoBack from "./VideoBack";
 import useFetchMovies from "../utils/Hooks/useFetchMovies";
-import { useEffect, Suspense } from "react";
+import { useEffect, Suspense, useState } from "react";
 import SecondaryComponent from "./SecondaryComponent";
-import { clearRandomMovie, setRandomMovie } from "../utils/redux/MovieSlice";
+import { resetmovie, resetvideoId, setRandomMovie } from "../utils/redux/MovieSlice";
 import { clearGpt } from "../utils/redux/GptSlice";
 import Loader from "./Loader";
 
 import actionMap from "../utils/actionmap";
-import { setMovieortv } from "../utils/redux/movieortvSlice";
+
 import { FaFilm, FaTv } from "react-icons/fa";
 import tvSections from "../utils/constants/tvselection";
-import TvSecondary from "./tvSecondary";
+
+import { useNavigate } from "react-router-dom";
+import TvSecondaryComponent from "./tvSecondaryComponent";
+import Tvvideoback from "./Tvvideoback";
+import { resettv } from "../utils/redux/tvSlice";
+import { resetTvvideoId } from "../utils/redux/tvdetailslice";
 
 
 const tvBrowse = () => {
-  const airingToday = useSelector((state) => state.tv.airingToday);
+  const airingToday = useSelector((state) => state.tv.onTheAir);
   const popularMovies = useSelector((state) => state.movies.popularMovies);
   const TopratedMovies = useSelector((state) => state.movies.TopratedMovies);
   const UpcomingMovies = useSelector((state) => state.movies.UpcomingMovies);
   const randomMovie=useSelector((state) => state.movies.randomMovie)
 
   const dispatch=useDispatch();
-  const showType=useSelector((state)=>state.movieortv.isMovie);
+ const [istv,setistv]=useState(true);
+ const navigate=useNavigate();
 
 
 // hardcoded approach
@@ -97,7 +103,7 @@ useEffect(() => {
   videoKey={randomMovie?.videos?.find(v => v.site === "YouTube" && v.key)?.key}
 />
 
-<VideoBack
+<Tvvideoback
   key={randomMovie?.id}
   movieId={randomMovie?.id}
   movieImg={randomMovie?.backdrop_path || randomMovie?.poster_path} // fallback to poster if no backdrop
@@ -109,12 +115,15 @@ useEffect(() => {
                 <div className="flex -mb-21 z-20 mt-8 sticky ml-7    bg-gray-800 bg-opacity-50 rounded-full p-[2px] w-full max-w-[200px] sm:max-w-[260px]  shadow-sm">
   <button
     className={`flex-1 min-w-[90px] py-2 rounded-full flex justify-center items-center gap-1 text-xs font-semibold transition-colors duration-200 ${
-      showType === "movie"
+      !istv
         ? "bg-blue-500 text-white shadow-sm"
         : "text-gray-400 hover:bg-gray-700"
     }`}
-    onClick={() => {dispatch(setMovieortv("movie"))
-      dispatch(clearRandomMovie());
+    onClick={() => {setistv(false);
+      navigate("/browse");
+      dispatch(resetTvvideoId());
+      dispatch(resetvideoId());
+      
       ``
     }}
     aria-label="Movies"
@@ -124,12 +133,16 @@ useEffect(() => {
   </button>
   <button
     className={`flex-1 min-w-[90px] py-2 ml-1 rounded-full flex justify-center items-center gap-1 text-xs font-semibold transition-colors duration-200 ${
-      showType === "tv"
+      istv
         ? "bg-blue-500 text-white shadow-sm"
         : "text-gray-400 hover:bg-gray-700"
     }`}
-onClick={() => { dispatch(setMovieortv("tv"))
-  dispatch(clearRandomMovie());
+onClick={() => { setistv(true);
+      navigate("/tvBrowse");
+      dispatch(resetTvvideoId());
+      dispatch(resetvideoId());
+      
+      
   
 }}
     aria-label="TV Shows"
@@ -148,7 +161,7 @@ onClick={() => { dispatch(setMovieortv("tv"))
 
                   {/* dynamic approach */}
            {tvSections.map((section, i) => (
-        <SecondaryComponent
+        <TvSecondaryComponent
           key={section.title}
           title={section.title}
           items={sectionStates[i]} 

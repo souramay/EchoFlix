@@ -5,9 +5,6 @@ import { useEffect, useState, useRef } from "react";
 import { setTrailer, setVideoplay, resetDetail } from "../utils/redux/DetailMovieSlice";
 import { FaChevronLeft } from "react-icons/fa";
 import { useNavigate, useParams } from "react-router-dom";
-import Overview from "./overview";
-import Clips from "./clips";
-import Caste from "./caste";
 import Loader from "./Loader";
 
 import useFetchDetails from "../utils/Hooks/useFetchDetails";
@@ -17,21 +14,31 @@ import Similar from "./Similar";
 import usefetchcaste from "../utils/Hooks/usefetchcaste";
 import useSimilarfetch from "../utils/Hooks/useSimilarfetch";
 import useReviewfetch from "../utils/Hooks/useReviewfetch";
-import usetvreview from "../utils/Hooks/usetvreview";
-import usetvdetail from "../utils/Hooks/usetvdetail";
-import usetvcaste from "../utils/Hooks/usetvcaste";
-import usetvvideo from "../utils/Hooks/usefetchtvvideo";
-import usetvsimilar from "../utils/Hooks/usetvsimilar";
+import usefetchtvVideo from "../utils/Hooks/usefetchtvVideo";
+import useFetchtvDetails from "../utils/Hooks/useFetchtvDetails";
+import useFetchTvCaste from "../utils/Hooks/usefetchtvcaste";
+import useSimilarTvfetch from "../utils/Hooks/useSimilarTvfetch";
+import useReviewTvfetch from "../utils/Hooks/useReviewTvfetch";
+import TvOverview from "./TvOverview";
+import TvClips from "./TvClips";
+import TvCaste from "./TvCaste";
+import TvGallery from "./TvGallery";
+import TvSimilar from "./TvSimilar";
+import Clips from "./clips";
+import TvReviews from "./TvReview";
+import { resetTvDetail, setTvTrailer, setTvVideoplay } from "../utils/redux/tvdetailslice";
+
+
 
 const Tvdetail = () => {
-  const { movieId } = useParams();
-  const videos = useSelector((state) => state.details.trailer) || [];
+  const { tvId } = useParams();
+  const videos = useSelector((state) => state.tvdetails.trailer) || [];
   const dispatch = useDispatch();
-  const detail = useSelector((state) => state.details.detail) || [];
-  const videoplay = useSelector((state) => state.details.videoplay);
+  const detail = useSelector((state) => state.tvdetails.detail) || [];
+  const videoplay = useSelector((state) => state.tvdetails.videoplay);
   const playerRef = useRef(null);
   const navigate = useNavigate();
-  
+
 
   const [overviews, setoverviews] = useState(true);
   const [clip, setclip] = useState(false);
@@ -42,23 +49,18 @@ const Tvdetail = () => {
 
   // Add a loading state
   const [loading, setLoading] = useState(true);
+ 
 
-  // reset detail first so subsequent hook effects don't pick stale data
-  useEffect(() => {
-    dispatch(resetDetail());
-  }, [movieId, dispatch]);
+  usefetchtvVideo(tvId, setTvTrailer);
+  useFetchtvDetails(tvId);
+  useFetchTvCaste(tvId);
+  useSimilarTvfetch(tvId);
+  useReviewTvfetch(tvId);
 
-  // fetchers: pass mediaType "tv"
-  usetvvideo(movieId, setTrailer);
-  usetvdetail(movieId);
-  usetvcaste(movieId);
-  usetvsimilar(movieId);
-  usetvreview(movieId);
-  
   // Scroll to top on mount
   useEffect(() => {
     window.scrollTo(0, 0);
-  }, [movieId]);
+  }, [tvId]);
   
 
   useEffect(() => {
@@ -68,31 +70,32 @@ const Tvdetail = () => {
         trailerVideos.length > 0
           ? trailerVideos[Math.floor(Math.random() * trailerVideos.length)]
           : null;
-      dispatch(setVideoplay(selected));
+      dispatch(setTvVideoplay(selected));
     }
-  }, [videos, movieId]);
+  }, [videos, tvId]);
 
   useEffect(() => {
-    // Reset videoplay when movieId changes
+    // Reset videoplay when tvId changes
     dispatch(setVideoplay(null));
-  }, [movieId]);
+  }, [tvId]);
 
   useEffect(() => {
-    // Set loading to true when movieId changes
+    // Set loading to true when tvId changes
     setLoading(true);
-    // Use TV fields (name / original_name) as well as movie title
-    if (detail && (detail.title || detail.name || detail.original_name)) {
+    // Simulate loading until detail is fetched
+    if (detail && detail.title) {
       setLoading(false);
     } else {
+      // Fallback: set loading to false after a timeout
       const timeout = setTimeout(() => setLoading(false), 1200);
       return () => clearTimeout(timeout);
     }
-  }, [movieId, detail]);
+  }, [tvId]);
 
   useEffect(() => {
-    dispatch(resetDetail());
+    dispatch(resetTvDetail());
     // then fetch new movie detail and trailer
-  }, [movieId]);
+  }, [tvId]);
 
   useEffect(() => {
     setoverviews(true);
@@ -101,7 +104,7 @@ const Tvdetail = () => {
     setreviews(false);
     setGallery(false);
     setSimilarRecommended(false);
-  }, [movieId]);
+  }, [tvId]);
 
   return (
     <div className="min-h-screen w-full text-white bg-gradient-to-br from-black via-gray-950 to-gray-900 overflow-x-hidden">
@@ -121,7 +124,7 @@ const Tvdetail = () => {
               Back
             </button>
             <p className="p-1 mt-10 text-sm font-serif text-gray-400 md:text-2xl md:mx-100 md:mt-2">
-              {detail.name || detail.original_name || detail.title || detail.original_title}
+              {detail.title || detail.original_title|| detail.name}
             </p>
 
             {videoplay ? (
@@ -250,29 +253,29 @@ const Tvdetail = () => {
               {overviews && (
                 <div className="flex justify-center w-full">
                   <div className="p-4 px-2 w-full  lg:max-w-6xl font-serif my-3 text-gray-200 mx-auto box-border overflow-x-auto max-w-full">
-                    <Overview movieId={movieId} />
+                    <TvOverview tvId={tvId} />
                   </div>
                 </div>
               )}
               {clip && (
                 <div className="flex justify-center mt-8 w-full">
-                  <Clips playerRef={playerRef} />
+                  <TvClips playerRef={playerRef} />
                 </div>
               )}
               {caste && (
                 <div>
-                  <Caste movieId={movieId} />
+                  <TvCaste tvId={tvId} />
                 </div>
               )}
-              {reviews && <div>{<Reviews movieId={movieId} />}</div>}
+              {reviews && <div>{<TvReviews tvId={tvId} />}</div>}
               {gallery && (
                 <div>
-                  <Gallery movieId={movieId} />
+                  <TvGallery tvId={tvId} />
                 </div>
               )}
               {similarRecommended && (
                 <div className="mt-8">
-                  <Similar movieId={movieId} />
+                  <TvSimilar tvId={tvId} />
                 </div>
               )}
             </div>

@@ -10,48 +10,48 @@ import { setSearchClicked } from "../utils/redux/GptSlice";
 import { useLocation, useNavigate } from "react-router-dom";
 import { auth } from "../utils/firebase";
 
-
 const Header = () => {
-
   // hooks
-const User =useSelector((state) => state.user);
-const searchClicked = useSelector((state) => state.gpt.SearchClicked);
-const navigate=useNavigate();
-const locate=useLocation();
+  const User = useSelector((state) => state.user);
+  const searchClicked = useSelector((state) => state.gpt.SearchClicked);
+  const navigate = useNavigate();
+  const locate = useLocation();
 
+  const dispatch = useDispatch();
 
-const dispatch =useDispatch();
+  const [showDropdown, setShowDropdown] = useState(false);
 
-const [showDropdown, setShowDropdown] = useState(false);
+  const HandleSignOut = () => {
+    signOut(auth)
+      .then(() => {
+        // Sign-out successful.
+      })
+      .catch((error) => {
+        // An error happened.
+        console.error("Error signing out: ", error);
+      });
+  };
 
-const HandleSignOut = () => {
-  signOut(auth).then(() => {
-    // Sign-out successful.
-   
-  }).catch((error) => {
-    // An error happened.
-    console.error("Error signing out: ", error);
-  });
-}
+  const toggleDropdown = () => {
+    setShowDropdown(!showDropdown);
+  };
 
-const toggleDropdown = () => {
-  setShowDropdown(!showDropdown);
-};
+  const handleSearchClick = () => {
+    dispatch(setSearchClicked());
+    navigate("/search");
+  };
 
-const handleSearchClick = () => {
-  dispatch(setSearchClicked());
-  navigate("/search");
- 
-
-};
-useEffect(()=>{
-  if(locate.pathname ==="/browse"){
-  dispatch(setSearchClicked());
-
-  
-}},[locate.pathname,dispatch]);
-
-
+  useEffect(() => {
+    if (
+      locate.pathname === "/browse" ||
+      locate.pathname.startsWith("/detail/") ||
+      locate.pathname === "/tvBrowse" ||
+      locate.pathname.startsWith("/tvBrowse/") ||
+      locate.pathname.startsWith("/tvdetail/")
+    ) {
+      dispatch(setSearchClicked());
+    }
+  }, [locate.pathname, dispatch]);
 
   return (
     <div className="flex justify-between items-center z-20 relative -mt-4 ">
@@ -63,7 +63,11 @@ useEffect(()=>{
       </div>
 
       <div className="ml-auto mr-2 sm:mr-4 flex items-center gap-1 sm:gap-3 md:gap-4 min-w-0">
-        {(locate.pathname === "/browse" || locate.pathname.startsWith("/detail/")) && (
+        {(locate.pathname === "/browse" ||
+          locate.pathname.startsWith("/detail/") ||
+          locate.pathname === "/tvBrowse" ||
+          locate.pathname.startsWith("/tvBrowse/") ||
+          locate.pathname.startsWith("/tvdetail/")) && (
           <button
             onClick={handleSearchClick}
             aria-label="GPT Search"
@@ -88,21 +92,26 @@ useEffect(()=>{
               className="bg-transparent border-none cursor-pointer flex items-center focus:outline-none ml-1 sm:ml-0"
             >
               <FiChevronDown
-                className={`w-5 h-5 sm:w-6 sm:h-6 text-white transition-transform duration-200 ${showDropdown ? "-rotate-180" : ""} mr-1 sm:mr-3`}
+                className={`w-5 h-5 sm:w-6 sm:h-6 text-white transition-transform duration-200 ${
+                  showDropdown ? "-rotate-180" : ""
+                } mr-1 sm:mr-3`}
               />
             </button>
             {showDropdown && (
               <ul className="absolute right-2 top-24 bg-[#B71C1C] rounded-lg cursor-pointer">
-                <li onClick={HandleSignOut} className="text-white p-2 font-sans font-bold">Logout</li>
+                <li
+                  onClick={HandleSignOut}
+                  className="text-white p-2 font-sans font-bold"
+                >
+                  Logout
+                </li>
               </ul>
             )}
           </>
         )}
       </div>
     </div>
-  )
-}
-
+  );
+};
 
 export default Header;
-

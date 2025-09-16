@@ -11,6 +11,8 @@ import "./index.css";
 import ErrorPage from "./components/ErrorPage";
 import Search from "./components/Search";
 import MovieDetail from "./components/MovieDetail";
+import TvBrowse from "./components/tvBrowse";
+import Tvdetail from "./components/Tvdetail";
 
 
 const router = createBrowserRouter([
@@ -23,6 +25,9 @@ const router = createBrowserRouter([
       { path: "browse", element: <Browse /> },
       { path: "search", element:<Search/>  },
       { path: "detail/:movieId", element:<MovieDetail/>  },
+  {path: "tvBrowse", element:<TvBrowse /> },
+  { path: "tvdetail/:tvId", element: <Tvdetail /> },
+
       
     ],
   },

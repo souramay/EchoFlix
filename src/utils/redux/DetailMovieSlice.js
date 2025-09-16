@@ -51,6 +51,13 @@ export const DetailMovieSlice=createSlice({
         resetDetail: (state) => {
             state.detail = {};
             state.trailer = [];
+            state.videoplay = null;
+            state.videodetails = [];
+            state.caste = null;
+            state.Reviews = null;
+            state.Gallery = null;
+            state.Similar = null;
+            state.Recommended = null;
             
           }
         
