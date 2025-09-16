@@ -15,6 +15,8 @@ export const DetailTvSlice = createSlice({
         Recommended: null,
         TvvideoId: null,
         TVSeason: null,
+        tvseasomvideo: null,
+        
         
     },
     reducers: {
@@ -68,6 +70,9 @@ export const DetailTvSlice = createSlice({
         },
         setTvSeason: (state, action) => {
             state.TVSeason = action.payload;
+        },
+        setTvseasomvideo: (state, action) => {
+            state.tvseasomvideo = action.payload;
         }
     }
 });
@@ -86,7 +91,8 @@ export const {
     resetTvDetail,
     setTvVideoId,
     resetTvvideoId,
-    setTvSeason
+    setTvSeason,
+    setTvseasomvideo
 } = DetailTvSlice.actions;
 
 export default DetailTvSlice.reducer;

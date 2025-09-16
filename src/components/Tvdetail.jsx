@@ -284,7 +284,7 @@ const Tvdetail = () => {
                {season && (
                 <div className="flex justify-center w-full">
                   <div className="p-4 px-2 w-full  lg:max-w-6xl font-serif my-3 text-gray-200 mx-auto box-border overflow-x-auto max-w-full">
-                    <Seasontv tvId={tvId} />
+                    <Seasontv tvId={tvId} playerRef={playerRef}/>
                   </div>
                 </div>
               )}

@@ -13,6 +13,7 @@ import Search from "./components/Search";
 import MovieDetail from "./components/MovieDetail";
 import TvBrowse from "./components/tvBrowse";
 import Tvdetail from "./components/Tvdetail";
+import Tvsearch from "./components/Tvsearch";
 
 
 const router = createBrowserRouter([
@@ -27,6 +28,7 @@ const router = createBrowserRouter([
       { path: "detail/:movieId", element:<MovieDetail/>  },
   {path: "tvBrowse", element:<TvBrowse /> },
   { path: "tvdetail/:tvId", element: <Tvdetail /> },
+  {path:"tvsearch", element:<Tvsearch/>}
 
       
     ],

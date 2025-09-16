@@ -9,6 +9,7 @@ export const GptSlice=createSlice({
         Movies:[],
         MovieSearch:[],
         filterMovies:[],
+    
     },
     reducers:{
         setSearchClicked:(state)=>{

@@ -40,7 +40,11 @@ const Header = () => {
 
   const handleSearchClick = () => {
     dispatch(setSearchClicked());
+    if(locate.pathname.startsWith("/browse") || locate.pathname.startsWith("/detail/") || locate.pathname.startsWith("/browse/")){
     navigate("/search");
+    }else if(locate.pathname.startsWith("/tvBrowse") || locate.pathname.startsWith("/tvdetail/") || locate.pathname.startsWith("/tvBrowse/")){
+      navigate("/tvsearch");
+    }
   };
 
   useEffect(() => {
