@@ -85,8 +85,8 @@ const Login = () => {
           >{!IsSignin ? "Sign Up" : "Sign In"}</button>
           
           <ul className="flex">
-            <li className="my-4 p-1 text-gray-400 opacity-90">{!IsSignin?"New to EchoFlix?" : "Already have an account?"}</li>
-            <li onClick={Signin} className="p-1 my-4 cursor-pointer">{!IsSignin?"Sign up now... :)" : "Sign in now... :)"}</li>
+            <li className="my-4 p-1 text-gray-400 opacity-90">{IsSignin?"New to EchoFlix?" : "Already have an account?"}</li>
+            <li onClick={Signin} className="p-1 my-4 cursor-pointer">{IsSignin?"Sign up now... :)" : "Sign in now... :)"}</li>
           </ul>
 
           
