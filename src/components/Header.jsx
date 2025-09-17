@@ -65,10 +65,13 @@ const Header = () => {
         className="w-36 mx-4 cursor-pointer"
         onClick={() => {
           navigate("/browse");
-          if(locate.pathname.startsWith("/tvBrowse") || locate.pathname.startsWith("/tvdetail/")){
+          
             dispatch(resetTvvideoId());
           dispatch(resetvideoId());
-          }
+          
+
+          
+          
           
         }}
       >
