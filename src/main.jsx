@@ -14,36 +14,29 @@ import MovieDetail from "./components/MovieDetail";
 import TvBrowse from "./components/tvBrowse";
 import Tvdetail from "./components/Tvdetail";
 import Tvsearch from "./components/Tvsearch";
-import ProtectedRoute from "./components/ProtectedRoute";
+
 
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <App />,
+    element: <App />,          // Layout component
     errorElement: <ErrorPage />,
     children: [
       { index: true, element: <Login /> },
-      {
-        path: "browse",
-        element:
-          <ProtectedRoute>
-            <Browse />
-          </ProtectedRoute>
-      },
-      {
-        path: "tvBrowse",
-        element:
-          <ProtectedRoute>
-            <TvBrowse />
-          </ProtectedRoute>
-      },
-      { path: "search", element: <Search /> },
-      { path: "detail/:movieId", element: <MovieDetail /> },
-      { path: "tvdetail/:tvId", element: <Tvdetail /> },
-      { path: "tvsearch", element: <Tvsearch /> }
+      { path: "browse", element: <Browse /> },
+      { path: "search", element:<Search/>  },
+      { path: "detail/:movieId", element:<MovieDetail/>  },
+  {path: "tvBrowse", element:<TvBrowse /> },
+  { path: "tvdetail/:tvId", element: <Tvdetail /> },
+  {path:"tvsearch", element:<Tvsearch/>}
+
+      
     ],
   },
 ]);
+
+
+
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <Provider store={appStore}>

@@ -20,21 +20,19 @@ function App() {
       if (user) {
         const { uid, email, displayName, photoURL } = user;
         dispatch(addUser({ uid, email, displayName, photoURL }));
-        if(location.pathname==="/"){
-        navigate("/browse");
-        }
-        if(location.pathname==="/login"){
+        if (location.pathname === "/" || location.pathname === "/login") {
           navigate("/browse");
-          }
+        }
       } else {
         dispatch(removeUser());
-        navigate("/");
+        if (location.pathname !== "/") {
+          navigate("/");
+        }
       }
-     
     });
 
     return () => unsubscribe();
-  }, [dispatch,navigate]);
+  }, [dispatch, navigate, location.pathname]);
   
 
   return (
