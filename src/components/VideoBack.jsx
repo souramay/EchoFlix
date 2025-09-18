@@ -10,6 +10,7 @@ const VideoBack = ({ movieId, movieImg }) => {
 
   const videos = useSelector((state) => state.movies.videoId) || [];
   const [videoplay, setVideoplay] = useState(null);
+  const [videoError, setVideoError] = useState(false);
 
   useFetchVideo(movieId,setVideoId);
 
@@ -33,7 +34,7 @@ const VideoBack = ({ movieId, movieImg }) => {
         className="w-[200%] h-screen object-cover pointer-events-none"
         style={{ filter: "contrast(1.2) brightness(1.05)" }}
       />
-      {videoplay && (
+      {videoplay && !videoError && (
         <iframe
           className="absolute top-1/2 left-1/2 w-[200%] h-[200%] min-w-[1280px] min-h-[720px] -translate-x-1/2 -translate-y-1/2"
           src={`https://www.youtube.com/embed/${videoplay.key}?autoplay=1&mute=1&controls=0&color=white&modestbranding=1&rel=0&playsinline=1&enablejsapi=1&loop=1&playlist=${videoplay.key}`}
@@ -41,6 +42,7 @@ const VideoBack = ({ movieId, movieImg }) => {
           frameBorder="0"
           allow="autoplay; encrypted-media"
           allowFullScreen
+          onError={() => setVideoError(true)}
         />
       )}
     </div>
