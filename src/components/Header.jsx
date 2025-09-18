@@ -64,15 +64,11 @@ const Header = () => {
       <div
         className="w-36 mx-4 cursor-pointer"
         onClick={() => {
-          navigate("/browse");
-          
-            dispatch(resetTvvideoId());
+          if (locate.pathname !== "/browse") {
+            navigate("/browse");
+          }else{navigate("/");}
+          dispatch(resetTvvideoId());
           dispatch(resetvideoId());
-          
-
-          
-          
-          
         }}
       >
         <img alt="logo" src={logo} className="w-auto" />
