@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 
-import {  useDispatch } from "react-redux";
+import {  useDispatch, useSelector } from "react-redux";
 
 import { onAuthStateChanged } from "firebase/auth";
 import { addUser, removeUser } from "./utils/redux/AuthSlice";
@@ -10,7 +10,7 @@ import Footer from "./components/Footer";
 import { auth } from "./utils/firebase";
 
 function App() {
-  
+  const user= useSelector((state) => state.user);
    const dispatch = useDispatch();
   const navigate=useNavigate();
   const location=useLocation();
@@ -21,7 +21,7 @@ function App() {
         const { uid, email, displayName, photoURL } = user;
         dispatch(addUser({ uid, email, displayName, photoURL }));
         if (location.pathname === "/" || location.pathname === "/login") {
-          navigate("/browse");
+            user &&  navigate("/browse");
         }
       } else {
         dispatch(removeUser());
