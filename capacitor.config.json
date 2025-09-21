@@ -1,0 +1,5 @@
+{
+  "appId": "com.echoflix.web.app",
+  "appName": "echoflix",
+  "webDir": "dist"
+}
